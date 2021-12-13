@@ -1,0 +1,18 @@
+{
+    "name": "midnightmotorsports-next",
+    "version": "1.0.0",
+    "description": "Recreating Midnight Motorsports, a MERN + Apollo and GraphQL e-commerce store, with Next.js and Keystone.js.",
+    "main": "index.js",
+    "scripts": {
+        "start": "node server/server.js",
+        "develop": "cd client && next -p 7777",
+        "install": "cd server && npm i && cd ../client && npm i",
+        "seed": "cd server && npm run seed",
+        "build": "cd client && next build"
+    },
+    "author": "Maxwell Walin, Jesus Bautista, Daniel Stark, and Parth Bhatt",
+    "license": "GNU AFFERO GENERAL PUBLIC LICENSE",
+    "devDependencies": {
+        "concurrently": "^5.1.0"
+    }
+}
