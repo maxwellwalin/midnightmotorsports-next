@@ -7,6 +7,7 @@ import {
 } from '@keystone-next/keystone/session';
 import { User } from './schemas/User';
 import { Make } from './schemas/Make';
+import { Model } from './schemas/Model';
 
 const databaseURL =
   process.env.DATABASE_URL || 'mongodb://localhost/keystone-midnight-motorsports-next';
@@ -41,7 +42,8 @@ export default withAuth(
     },
     lists: createSchema({
       User,
-      Make
+      Make,
+      Model
     }),
     ui: {
       isAccessAllowed: ({ session }) => {
