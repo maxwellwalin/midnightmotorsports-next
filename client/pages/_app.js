@@ -1,5 +1,9 @@
+import Page from "../components/Page"
+
 export default function MyApp({ Component, pageProps }) {
     return (
-        <Component {...pageProps} />
+        <Page>
+            <Component {...pageProps} />
+        </Page>
     )
 }
