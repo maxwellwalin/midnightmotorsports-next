@@ -6,6 +6,7 @@ import {
   statelessSessions,
 } from '@keystone-next/keystone/session';
 import { User } from './schemas/User';
+import { Make } from './schemas/Make';
 
 const databaseURL =
   process.env.DATABASE_URL || 'mongodb://localhost/keystone-midnight-motorsports-next';
@@ -40,6 +41,7 @@ export default withAuth(
     },
     lists: createSchema({
       User,
+      Make
     }),
     ui: {
       isAccessAllowed: ({ session }) => {
@@ -47,8 +49,6 @@ export default withAuth(
         return !!session?.data;
       },
     },
-    session: withItemData(statelessSessions(sessionConfig), {
-      User: `id name email`
-    })
+    session: withItemData(statelessSessions(sessionConfig))
   })
 )
