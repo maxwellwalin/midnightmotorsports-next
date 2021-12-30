@@ -8,10 +8,9 @@ export default function Page({ children }) {
   return (
     <div>
       <GlobalStyles />
-      <Header></Header>
-      <Nav></Nav>
+      <Header />
       {children}
-      <Footer></Footer>
+      <Footer />
     </div>
   );
 }
@@ -26,6 +25,11 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: inherit;
     margin: 0;
     padding: 0;
+  }
+
+  body {
+    background-color: black;
+    color: white;
   }
 
   a {
