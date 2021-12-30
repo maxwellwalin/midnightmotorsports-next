@@ -4,9 +4,12 @@ import { list } from '@keystone-next/keystone/schema';
 export const Model = list({
   fields: {
     name: text({ isRequired: true }),
-    // models: relationship({
-    //   ref: 'Part',
-    //   many: true,
-    // }),
+    parts: relationship({
+      ref: 'Part.model',
+      many: true,
+    }),
+    year: relationship({
+      ref: 'Year.model',
+    }),
   }
 });
