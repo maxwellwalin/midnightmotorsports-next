@@ -3,13 +3,22 @@ import { list } from '@keystone-next/keystone/schema';
 
 export const Part = list({
     fields: {
-        name: text({ isRequired: true }),
+        name: text({ 
+            isRequired: true 
+        }),
         description: text({
             ui: {
                 displayMode: 'textarea',
             },
         }),
-        year: relationship({ ref: 'Year.parts' }),
+        year: relationship({
+            ref: 'Year',
+            ui: {
+                displayMode: 'cards',
+                cardFields: ['beginningYear', 'endYear'],
+                inlineCreate: { fields: ['beginningYear', 'endYear'] },
+            }
+        }),
         images: relationship({
             ref: 'PartImage.part',
             many: true,
@@ -26,8 +35,23 @@ export const Part = list({
         quantity: integer({
             defaultValue: 0,
         }),
-        categories: relationship({ ref: 'Category', many: true }),
+        categories: relationship({
+            ref: 'Category', 
+            many: true, 
+            ui: {
+                displayMode: 'cards',
+                cardFields: ['name'],
+                inlineConnect: true
+            },
+        }),
         partNumber: text(),
-        model: relationship({ ref: "Model.parts" })
+        model: relationship({ 
+            ref: "Model.parts",
+            ui: {
+                displayMode: 'cards',
+                cardFields: ['name'],
+                inlineConnect: true
+            },
+         })
     },
 });
