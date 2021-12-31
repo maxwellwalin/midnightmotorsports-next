@@ -5,19 +5,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 export default function Header() {
     return (
         <HeaderStyles>
-            <Div />
-            <A href="/about"><MidnightLogo src='./images/midnightlogo.png' alt='midnight motorsports black and white logo' /></A>
             <Div>
                 <A href="https://www.instagram.com/949midnight.motorsports/" target="_blank" rel="noreferrer">
-                    <FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon>
+                    <FontAwesomeIcon icon={faInstagram} className='fa-2x' style={leftIconStyle}></FontAwesomeIcon>
                 </A>
                 <A href="https://www.facebook.com/949midnight.motorsports" target="_blank" rel="noreferrer">
-                    <FontAwesomeIcon icon={faFacebook}></FontAwesomeIcon>
-                </A>
-                <A href="/login">
-                    Login
+                    <FontAwesomeIcon icon={faFacebook} className='fa-2x'></FontAwesomeIcon>
                 </A>
             </Div>
+            <A href="/about"><MidnightLogo src='./images/midnightlogo.png' alt='midnight motorsports black and white logo' /></A>
+            <A href="/login">
+                Login
+            </A>
         </HeaderStyles>
     )
 }
@@ -29,17 +28,18 @@ const HeaderStyles = styled.header`
     color: white;
     border-bottom: 1px solid hsla(0,0%,100%,.1);
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
 `
 
 const Div = styled.div`
-    margin: auto;
+    align-self: center;
+    justify-self: center;
 `
 const A = styled.a`
-    font-size: 2rem;
-    text-align: center;
+    font-size: 1.5rem;
     text-decoration: none;
     color: white;
-    margin: 0 1rem;
+    align-self: center;
 
     &:hover {
         transition: 400ms;
@@ -49,9 +49,24 @@ const A = styled.a`
 `
 
 const MidnightLogo = styled.img`
-    width: 10vw;
+    width: 15rem;
     height: inherit;
-    grid-column-start: 2;
-    grid-column-end: 3;
+    grid-column: 2;
+    grid-row: 1;
     margin: 1rem 0;
+
+    @media (max-width: 650px) {
+        margin: 0;
+        height: 12rem;
+        width: 12rem;
+    }
+
+    @media (max-width: 480px) {
+        height: 10rem;
+        width: 10rem;
+    }
 `
+
+const leftIconStyle = {
+    marginRight: '1rem',
+}
