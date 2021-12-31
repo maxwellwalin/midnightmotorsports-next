@@ -1,7 +1,6 @@
 import propTypes from 'prop-types';
 import { createGlobalStyle } from 'styled-components';
 import Header from './Header';
-import Nav from './Nav';
 import Footer from './Footer';
 
 export default function Page({ children }) {
@@ -28,7 +27,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    background-color: black;
+    background: linear-gradient( rgb(0, 0, 0) 25%, rgb(36, 9, 134) 100%, rgb(42, 17, 99) 100%);
     color: white;
   }
 
