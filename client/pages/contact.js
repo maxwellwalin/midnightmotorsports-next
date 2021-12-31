@@ -67,7 +67,7 @@ export default function Contact() {
                 <Textarea name="message" value={formState.message} onChange={handleChange} placeholder="Message"></Textarea>
 
                 <SubmitBtn className='submitBtn' type="submit" value="Submit">Submit</SubmitBtn>
-                {<div className="alert alert-success mt-4">Your message has been sent. You will receive a reply within 3 business days. Thank you!</div>}
+                {contacted && <div className="alert alert-success mt-4">Your message has been sent. You will receive a reply within 3 business days. Thank you!</div>}
                 {contactFailed[0] && <div className="alert alert-danger mt-4">There was an error sending your message. Error: {contactFailed[1]}. Please try again later.</div>}
             </Form>
         </Container>
