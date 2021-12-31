@@ -49,6 +49,8 @@ const A = styled.a`
 
 export const DisappearingDiv = styled.div`
   display: inline;
+  align-self: center;
+  justify-self: center;
 
   @media (max-width: 480px) {
     display:none;
