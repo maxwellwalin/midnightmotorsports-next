@@ -2,12 +2,14 @@ import propTypes from 'prop-types';
 import { createGlobalStyle } from 'styled-components';
 import Header from './Header';
 import Footer from './Footer';
+import Nav from './Nav';
 
 export default function Page({ children }) {
   return (
     <div>
       <GlobalStyles />
       <Header />
+      <Nav />
       {children}
       <Footer />
     </div>
