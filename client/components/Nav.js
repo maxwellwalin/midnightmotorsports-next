@@ -6,14 +6,14 @@ function NavBar() {
 
   return (
     <Nav>
-      <A className={router.pathname == "/about" ? "active" : ""} href="/about">
-        About Us
+      <A className={router.pathname == "/about" ? "active" : "about"} href="/about">
+        About <DisappearingDiv>Us</DisappearingDiv>
       </A>
-      <A className={router.pathname == "/brands" ? "active" : ""} href="/brands">
-        Shop Products
+      <A className={router.pathname == "/brands" ? "active" : "about"} href="/brands">
+        Shop <DisappearingDiv>Products</DisappearingDiv>
       </A>
-      <A className={router.pathname == "/contact" ? "active" : ""} href="/contact">
-        Contact Us
+      <A className={router.pathname == "/contact" ? "active" : "about"} href="/contact">
+        Contact <DisappearingDiv>Us</DisappearingDiv>
       </A>
     </Nav>
   )
@@ -44,6 +44,14 @@ const A = styled.a`
   &.active {
     color: #979aff;
     text-decoration: underline;
+  }
+`
+
+export const DisappearingDiv = styled.div`
+  display: inline;
+
+  @media (max-width: 480px) {
+    display:none;
   }
 `
 
