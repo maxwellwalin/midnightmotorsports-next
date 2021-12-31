@@ -1,14 +1,15 @@
 import propTypes from 'prop-types';
 import { createGlobalStyle } from 'styled-components';
 import Header from './Header';
-import Nav from './Nav';
 import Footer from './Footer';
+import Nav from './Nav';
 
 export default function Page({ children }) {
   return (
     <div>
       <GlobalStyles />
       <Header />
+      <Nav />
       {children}
       <Footer />
     </div>
@@ -28,7 +29,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    background-color: black;
+    background: linear-gradient( rgb(0, 0, 0) 25%, rgb(36, 9, 134) 100%, rgb(42, 17, 99) 100%);
     color: white;
   }
 
