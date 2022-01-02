@@ -13,7 +13,7 @@ export default function Header() {
                     <FontAwesomeIcon icon={faFacebook} className='fa-2x'></FontAwesomeIcon>
                 </A>
             </Div>
-            <A href="/about"><MidnightLogo src='./images/midnightlogo.png' alt='midnight motorsports black and white logo' /></A>
+            <A href="/about"><MidnightLogo src='https://res.cloudinary.com/dtpgzynwd/image/upload/v1641101298/midnight-motorsports/midnightlogo_ilxpls.png' alt='midnight motorsports black and white logo' /></A>
             <A href="/login">
                 Login
             </A>
