@@ -7,7 +7,7 @@ import Form from "./styles/Form.js";
 import DisplayError from "./ErrorMessage.js";
 import React, { Component } from "react";
 import Select from "react-select";
-import { ALL_CATEGORIES_QUERY } from "../lib/queries";
+
 
 const CREATE_PRODUCT_MUTATION = gql`
   mutation CREATE_PRODUCT_MUTATION($data: PartCreateInput!) {
@@ -19,8 +19,8 @@ const CREATE_PRODUCT_MUTATION = gql`
   }
 `;
 
-export default function AddProduct() {
-  const { categoriesLoading, categoriesData} = useQuery(ALL_CATEGORIES_QUERY);
+export default function AddProduct({ categories }) {
+  
 
   const { inputs, handleChange, clearForm, resetForm } = useForm({
     name: "Test part",
@@ -74,16 +74,14 @@ export default function AddProduct() {
     }
   );
 
-  if (categoriesLoading) {
-    return <p>Loading...</p>;
-  }
-  console.log(categoriesData);
-  const options = [
-    { value: "chocolate", label: "Chocolate" },
-    { value: "strawberry", label: "Strawberry" },
-    { value: "vanilla", label: "Vanilla" },
-  ];
-
+  
+  const options = categories.map((category) => {
+    return {
+      value: category.name,
+      label: category.name,
+    }
+  })
+  console.log(options)
   return (
     <Form
       onSubmit={async (e) => {
