@@ -12,6 +12,7 @@ import { Part } from './schemas/Part';
 import { PartImage } from './schemas/PartImage';
 import { Year } from './schemas/Year';
 import { Category } from './schemas/Category';
+import { MakeImage } from './schemas/MakeImage';
 
 const databaseURL =
   process.env.DATABASE_URL || 'mongodb://localhost/keystone-midnight-motorsports-next';
@@ -47,11 +48,12 @@ export default withAuth(
     lists: createSchema({
       User,
       Make,
+      MakeImage,
       Model,
       Part,
       PartImage,
       Year,
-      Category
+      Category,
     }),
     ui: {
       isAccessAllowed: ({ session }) => {

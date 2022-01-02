@@ -1,14 +1,42 @@
 import Link from 'next/link';
 import styled from 'styled-components';
+import { useQuery } from '@apollo/client'
+import gql from 'graphql-tag';
+
+const ALL_MAKES_QUERY = gql`
+query allMakes {
+  allMakes {
+    name
+    image {
+      image {
+        publicUrlTransformed
+      }
+      altText
+    }
+  }
+}
+`
 
 export default function Brands() {
+    const { loading, data, error } = useQuery(ALL_MAKES_QUERY);
+
+    if (loading) return <p>Loading...</p>
+    if (error) return <p>Error: {error}</p>
+
+    console.log(data.allMakes)
+
     return (
         <Container>
             <PageTitle>Our Brands</PageTitle>
             <IconContainer>
-                <Link href='/mitsubishi'><MitsubishiLogo src='/images/transparentmitlogo.png' className='mitlogo' alt='mitsubishi logo' /></Link>
-                <Link href='/subaru'><SubaruLogo src='/images/transparentsublogo.png' className='subarulogo' alt="Subaru logo" /></Link>
-                <Link href='/bmw'><BMWLogo src='/images/transparentbmwlogo.png' className='bmwlogo' alt='bmw logo' /></Link>
+                {data.allMakes.map((make) => {
+                    return (
+                        <div>
+                            <img src={make?.image?.image?.publicUrlTransformed} width={200} height={200} />
+                            <p>{make.name}</p>
+                        </div>
+                    )
+                })}
             </IconContainer>
         </Container>
     )
@@ -29,10 +57,10 @@ const PageTitle = styled.div`
 `
 
 const IconContainer = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     align-items: center;
-    justify-items: center;
     width: 100%;
     min-height: 30rem;
 `
