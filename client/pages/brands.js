@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { useQuery } from '@apollo/client'
 import gql from 'graphql-tag';
 import Link from 'next/link'
+import Head from 'next/head'
 
 const ALL_MAKES_QUERY = gql`
 query allMakes {
@@ -26,6 +27,11 @@ export default function Brands() {
 
     return (
         <Container>
+            <Head>
+                <title>
+                    {`Midnight Motorsports | All Brands`}
+                </title>
+            </Head>
             <PageTitle>Our Brands</PageTitle>
             <IconContainer>
                 {data.allMakes.map((make) => {

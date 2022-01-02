@@ -14,6 +14,7 @@ import { Year } from './schemas/Year';
 import { Category } from './schemas/Category';
 import { MakeImage } from './schemas/MakeImage';
 import { ModelImage } from './schemas/ModelImage';
+import { CategoryImage } from './schemas/CategoryImage';
 
 const databaseURL =
   process.env.DATABASE_URL || 'mongodb://localhost/keystone-midnight-motorsports-next';
@@ -56,6 +57,7 @@ export default withAuth(
       PartImage,
       Year,
       Category,
+      CategoryImage
     }),
     ui: {
       isAccessAllowed: ({ session }) => {

@@ -2,6 +2,7 @@ import { useQuery } from "@apollo/client";
 import gql from "graphql-tag";
 import styled from 'styled-components';
 import Link from 'next/link';
+import Head from 'next/head'
 
 const SINGLE_MAKE_QUERY = gql`
 query Make($id: ID!) {
@@ -29,7 +30,7 @@ query Make($id: ID!) {
 
 export default function ModelSelectionPage({ query }) {
     const { data, loading, error } = useQuery(SINGLE_MAKE_QUERY, {
-        variables: { id: query.id }
+        variables: { id: query.makeID }
     })
 
     if (loading) return <p>Loading...</p>
@@ -37,12 +38,17 @@ export default function ModelSelectionPage({ query }) {
 
     return (
         <Container>
+            <Head>
+                <title>
+                    {`Midnight Motorsports | ${data.Make.name.toUpperCase()} Models`}
+                </title>
+            </Head>
             <PageTitle>{data.Make.name.toUpperCase()}</PageTitle>
             <IconContainer>
                 {data.Make.models.map((model) => {
                     return (
                         <div key={model.id}>
-                            <Link href={`/model/${model.id}`} shallow>
+                            <Link href={`/categories/${model.id}`} shallow>
                                 <ModelSelectIcon src={model?.images?.filter(image => image.name === `${model.name}icon`)[0]?.image?.publicUrlTransformed} />
                             </Link>
                             <PageTitle>{model.name.toUpperCase()}</PageTitle>
@@ -58,10 +64,10 @@ const Container = styled.div`
     padding: 3rem 7rem 5rem 7rem;
 `
 
-const PageTitle = styled.div`
+export const PageTitle = styled.div`
     text-align: center;
     font-size: 3rem;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
     text-decoration: underline;
 `
 

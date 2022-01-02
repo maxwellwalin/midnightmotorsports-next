@@ -1,36 +1,33 @@
-import styled from "styled-components";
-import { useRouter } from "next/router";
-import Link from "next/link";
+import styled from 'styled-components'
+import { useRouter } from 'next/router'
+import Link from 'next/link'
 
 function NavBar() {
   const router = useRouter();
 
   return (
     <Nav>
-      <Link href="/about" shallow>
-        <A className={router.pathname == "/about" ? "active" : "about"}>
-          About <DisappearingDiv>Us</DisappearingDiv>
-        </A>
-      </Link>
-      <Link href="/brands" shallow>
-        <A className={router.pathname == "/brands" ? "active" : "brands"}>
-          Shop <DisappearingDiv>Products</DisappearingDiv>
-        </A>
-      </Link>
-      <Link href="/contact" shallow>
-        <A
-          className={router.pathname == "/contact" ? "active" : "contact"}
-        >
-          Contact <DisappearingDiv>Us</DisappearingDiv>
-        </A>
-      </Link>
-      <Link href="/sell" shallow>
-        <A
-          className={router.pathname == "/sell" ? "active" : "sell"}
-        >
-          Sell <DisappearingDiv>Products</DisappearingDiv>
-        </A>
-      </Link>
+      <StyledLink>
+        <Link className={router.pathname == "/about" ? "active" : "about"} href="/about" shallow>
+          <div>
+            About <DisappearingDiv>Us</DisappearingDiv>
+          </div>
+        </Link>
+      </StyledLink>
+      <StyledLink>
+        <Link className={router.pathname == "/brands" ? "active" : "about"} href="/brands" shallow>
+          <div>
+            Shop <DisappearingDiv>Products</DisappearingDiv>
+          </div>
+        </Link>
+      </StyledLink>
+      <StyledLink>
+        <Link className={router.pathname == "/contact" ? "active" : "about"} href="/contact" shallow>
+          <div>
+            Contact <DisappearingDiv>Us</DisappearingDiv>
+          </div>
+        </Link>
+      </StyledLink>
     </Nav>
   );
 }
@@ -41,14 +38,13 @@ const Nav = styled.nav`
   font-size: 1.5rem;
   color: white;
   padding: 1rem 0;
-  border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
-`;
+  border-bottom: 1px solid hsla(0,0%,100%,.1);
+  justify-items: center;
+`
 
-const A = styled.a`
-  text-align: center;
+const StyledLink = styled.div`
   text-decoration: none;
   color: white;
-  margin: auto;
 
   &:hover {
     transition: 400ms;
