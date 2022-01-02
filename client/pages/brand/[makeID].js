@@ -30,7 +30,7 @@ query Make($id: ID!) {
 
 export default function ModelSelectionPage({ query }) {
     const { data, loading, error } = useQuery(SINGLE_MAKE_QUERY, {
-        variables: { id: query.id }
+        variables: { id: query.makeID }
     })
 
     if (loading) return <p>Loading...</p>

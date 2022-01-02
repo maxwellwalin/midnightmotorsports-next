@@ -2,7 +2,7 @@ import { useQuery } from "@apollo/client"
 import gql from "graphql-tag"
 import styled from 'styled-components'
 import Link from "next/link"
-import { PageTitle } from "../brand/[id]"
+import { PageTitle } from "../brand/[makeID]"
 
 const ALL_CATEGORIES_QUERY = gql`
     query allCategories {
@@ -34,7 +34,7 @@ export default function Categories({ query }) {
                 {data.allCategories.map((category) => {
                     return (
                         <CategoryCard key={category.id}>
-                            <Link href={`/model/${query.modelID}?category=${category.id}`} shallow>
+                            <Link href={`/model/${query.modelID}?categoryName=${category.name}`} shallow>
                                 <div>
                                     <img src={category.image.image.publicUrlTransformed}></img>
                                     <div>{category.name.toUpperCase()}</div>
