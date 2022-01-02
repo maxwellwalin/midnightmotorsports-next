@@ -1,22 +1,32 @@
-import styled from 'styled-components';
-import { useRouter } from 'next/router';
+import styled from "styled-components";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
 function NavBar() {
   const router = useRouter();
 
   return (
     <Nav>
-      <A className={router.pathname == "/about" ? "active" : "about"} href="/about">
-        About <DisappearingDiv>Us</DisappearingDiv>
-      </A>
-      <A className={router.pathname == "/brands" ? "active" : "about"} href="/brands">
-        Shop <DisappearingDiv>Products</DisappearingDiv>
-      </A>
-      <A className={router.pathname == "/contact" ? "active" : "about"} href="/contact">
-        Contact <DisappearingDiv>Us</DisappearingDiv>
-      </A>
+      <Link href="/about" shallow>
+        <A className={router.pathname == "/about" ? "active" : "about"}>
+          About <DisappearingDiv>Us</DisappearingDiv>
+        </A>
+      </Link>
+      <Link href="/brands" shallow>
+        <A className={router.pathname == "/brands" ? "active" : "about"}>
+          Shop <DisappearingDiv>Products</DisappearingDiv>
+        </A>
+      </Link>
+      <Link href="/contact" shallow>
+        <A
+          className={router.pathname == "/contact" ? "active" : "about"}
+          href="/contact"
+        >
+          Contact <DisappearingDiv>Us</DisappearingDiv>
+        </A>
+      </Link>
     </Nav>
-  )
+  );
 }
 
 const Nav = styled.nav`
@@ -25,8 +35,8 @@ const Nav = styled.nav`
   font-size: 1.5rem;
   color: white;
   padding: 1rem 0;
-  border-bottom: 1px solid hsla(0,0%,100%,.1);
-`
+  border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
+`;
 
 const A = styled.a`
   text-align: center;
@@ -45,7 +55,7 @@ const A = styled.a`
     color: #979aff;
     text-decoration: underline;
   }
-`
+`;
 
 export const DisappearingDiv = styled.div`
   display: inline;
@@ -53,8 +63,8 @@ export const DisappearingDiv = styled.div`
   justify-self: center;
 
   @media (max-width: 480px) {
-    display:none;
+    display: none;
   }
-`
+`;
 
-export default NavBar
+export default NavBar;
