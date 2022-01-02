@@ -1,5 +1,6 @@
 import { useState } from "react"
-import styled from "styled-components";
+import styled from "styled-components"
+import Head from 'next/head'
 
 export default function Contact() {
     const [contacted, setContacted] = useState(false);
@@ -49,6 +50,11 @@ export default function Contact() {
 
     return (
         <Container>
+            <Head>
+                <title>
+                    {`Midnight Motorsports | Contact Us`}
+                </title>
+            </Head>
             <Form onSubmit={handleSubmit}>
                 <label>Full Name</label>
                 <Input type="text" name="fullName" value={formState.fullName} placeholder="Full Name" required onChange={handleChange}></Input>
