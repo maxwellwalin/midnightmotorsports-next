@@ -2,6 +2,7 @@ import { useQuery } from "@apollo/client"
 import gql from "graphql-tag"
 import styled from 'styled-components'
 import Link from "next/link"
+import { PageTitle } from "../brand/[id]"
 
 const ALL_CATEGORIES_QUERY = gql`
     query allCategories {
@@ -26,26 +27,41 @@ export default function Categories({ query }) {
 
     return (
         <Container>
-            {data.allCategories.map((category) => {
-                return (
-                    <CategoryCard key={category.id}>
-                        <Link href={`/model/${query.modelID}?category=${category.id}`} shallow>
-                            <div>
-                                <img src={category.image.image.publicUrlTransformed}></img>
-                                <p>{category.name}</p>
-                            </div>
-                        </Link>
-                    </CategoryCard>
-                )
-            })}
+            <PageTitle>
+                Choose A Category:
+            </PageTitle>
+            <CategoryContainer>
+                {data.allCategories.map((category) => {
+                    return (
+                        <CategoryCard key={category.id}>
+                            <Link href={`/model/${query.modelID}?category=${category.id}`} shallow>
+                                <div>
+                                    <img src={category.image.image.publicUrlTransformed}></img>
+                                    <div>{category.name.toUpperCase()}</div>
+                                </div>
+                            </Link>
+                        </CategoryCard>
+                    )
+                })}
+            </CategoryContainer>
         </Container>
     )
 }
 
 const Container = styled.div`
+    padding: 3rem 25vw;
+`
 
+const CategoryContainer = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
 `
 
 const CategoryCard = styled.div`
-
+    background-color: white;
+    color: black;
+    text-align: center;
+    margin-bottom: 3.5rem;
 `

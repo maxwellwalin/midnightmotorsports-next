@@ -64,10 +64,10 @@ const Container = styled.div`
     padding: 3rem 7rem 5rem 7rem;
 `
 
-const PageTitle = styled.div`
+export const PageTitle = styled.div`
     text-align: center;
     font-size: 3rem;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
     text-decoration: underline;
 `
 
