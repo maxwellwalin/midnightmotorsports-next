@@ -2,6 +2,7 @@ import { useQuery } from "@apollo/client";
 import gql from "graphql-tag";
 import styled from 'styled-components';
 import Link from 'next/link';
+import Head from 'next/head'
 
 const SINGLE_MAKE_QUERY = gql`
 query Make($id: ID!) {
@@ -37,6 +38,11 @@ export default function ModelSelectionPage({ query }) {
 
     return (
         <Container>
+            <Head>
+                <title>
+                    {`Midnight Motorsports | ${data.Make.name.toUpperCase()} Models`}
+                </title>
+            </Head>
             <PageTitle>{data.Make.name.toUpperCase()}</PageTitle>
             <IconContainer>
                 {data.Make.models.map((model) => {
