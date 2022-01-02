@@ -48,7 +48,7 @@ export default function ModelSelectionPage({ query }) {
                 {data.Make.models.map((model) => {
                     return (
                         <div key={model.id}>
-                            <Link href={`/model/${model.id}`} shallow>
+                            <Link href={`/categories/${model.id}`} shallow>
                                 <ModelSelectIcon src={model?.images?.filter(image => image.name === `${model.name}icon`)[0]?.image?.publicUrlTransformed} />
                             </Link>
                             <PageTitle>{model.name.toUpperCase()}</PageTitle>
