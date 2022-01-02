@@ -41,7 +41,7 @@ export default function ModelSelectionPage({ query }) {
             <IconContainer>
                 {data.Make.models.map((model) => {
                     return (
-                        <div>
+                        <div key={model.id}>
                             <Link href={`/model/${model.id}`} shallow>
                                 <ModelSelectIcon src={model?.images?.filter(image => image.name === `${model.name}icon`)[0]?.image?.publicUrlTransformed} />
                             </Link>

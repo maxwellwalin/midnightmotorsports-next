@@ -30,9 +30,11 @@ export default function Brands() {
             <IconContainer>
                 {data.allMakes.map((make) => {
                     return (
-                        <Link href={`/brand/${make.id}`} shallow>
-                            <BrandSelectIcon src={make?.image?.image?.publicUrlTransformed} />
-                        </Link>
+                        <div key={make.id}>
+                            <Link href={`/brand/${make.id}`} shallow>
+                                <BrandSelectIcon src={make?.image?.image?.publicUrlTransformed} />
+                            </Link>
+                        </div>
                     )
                 })}
             </IconContainer>
