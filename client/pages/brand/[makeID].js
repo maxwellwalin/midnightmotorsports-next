@@ -30,7 +30,7 @@ query Make($id: ID!) {
 
 export default function ModelSelectionPage({ query }) {
     const { data, loading, error } = useQuery(SINGLE_MAKE_QUERY, {
-        variables: { id: query.id }
+        variables: { id: query.makeID }
     })
 
     if (loading) return <p>Loading...</p>
@@ -48,7 +48,7 @@ export default function ModelSelectionPage({ query }) {
                 {data.Make.models.map((model) => {
                     return (
                         <div key={model.id}>
-                            <Link href={`/model/${model.id}`} shallow>
+                            <Link href={`/categories/${model.id}`} shallow>
                                 <ModelSelectIcon src={model?.images?.filter(image => image.name === `${model.name}icon`)[0]?.image?.publicUrlTransformed} />
                             </Link>
                             <PageTitle>{model.name.toUpperCase()}</PageTitle>
@@ -64,10 +64,10 @@ const Container = styled.div`
     padding: 3rem 7rem 5rem 7rem;
 `
 
-const PageTitle = styled.div`
+export const PageTitle = styled.div`
     text-align: center;
     font-size: 3rem;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
     text-decoration: underline;
 `
 

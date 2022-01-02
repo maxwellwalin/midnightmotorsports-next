@@ -1,20 +1,33 @@
-import styled from 'styled-components';
-import { useRouter } from 'next/router';
+import styled from 'styled-components'
+import { useRouter } from 'next/router'
+import Link from 'next/link'
 
 function NavBar() {
   const router = useRouter();
 
   return (
     <Nav>
-      <A className={router.pathname == "/about" ? "active" : "about"} href="/about">
-        About <DisappearingDiv>Us</DisappearingDiv>
-      </A>
-      <A className={router.pathname == "/brands" ? "active" : "about"} href="/brands">
-        Shop <DisappearingDiv>Products</DisappearingDiv>
-      </A>
-      <A className={router.pathname == "/contact" ? "active" : "about"} href="/contact">
-        Contact <DisappearingDiv>Us</DisappearingDiv>
-      </A>
+      <StyledLink>
+        <Link className={router.pathname == "/about" ? "active" : "about"} href="/about" shallow>
+          <div>
+            About <DisappearingDiv>Us</DisappearingDiv>
+          </div>
+        </Link>
+      </StyledLink>
+      <StyledLink>
+        <Link className={router.pathname == "/brands" ? "active" : "about"} href="/brands" shallow>
+          <div>
+            Shop <DisappearingDiv>Products</DisappearingDiv>
+          </div>
+        </Link>
+      </StyledLink>
+      <StyledLink>
+        <Link className={router.pathname == "/contact" ? "active" : "about"} href="/contact" shallow>
+          <div>
+            Contact <DisappearingDiv>Us</DisappearingDiv>
+          </div>
+        </Link>
+      </StyledLink>
     </Nav>
   )
 }
@@ -26,13 +39,12 @@ const Nav = styled.nav`
   color: white;
   padding: 1rem 0;
   border-bottom: 1px solid hsla(0,0%,100%,.1);
+  justify-items: center;
 `
 
-const A = styled.a`
-  text-align: center;
+const StyledLink = styled.div`
   text-decoration: none;
   color: white;
-  margin: auto;
 
   &:hover {
     transition: 400ms;
