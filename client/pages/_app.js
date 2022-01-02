@@ -1,37 +1,25 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import Page from "../components/Page";
-import { setContext } from "@apollo/client/link/context";
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  createHttpLink,
-} from "@apollo/client";
-const httpLink = createHttpLink({
-  uri: "/graphql",
-});
+import { ApolloProvider } from '@apollo/client'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import Page from "../components/Page"
+import withData from '../lib/withData';
 
-const authLink = setContext((_, { headers }) => {
-  const token = localStorage.getItem("id_token");
-  return {
-    headers: {
-      ...headers,
-      authorization: token ? `Bearer ${token}` : "",
-    },
-  };
-});
-
-const client = new ApolloClient({
-  link: authLink.concat(httpLink),
-  cache: new InMemoryCache(),
-});
-
-export default function MyApp({ Component, pageProps }) {
-  return (
-    <ApolloProvider client={client}>
-      <Page>
-        <Component {...pageProps} />
-      </Page>
-    </ApolloProvider>
-  );
+function MyApp({ Component, pageProps, apollo }) {
+    return (
+        <ApolloProvider client={apollo}>
+            <Page>
+                <Component {...pageProps} />
+            </Page>
+        </ApolloProvider>
+    )
 }
+
+MyApp.getInitialProps = async function ({ Component, ctx }) {
+    let pageProps = {};
+    if (Component.getInitialProps) {
+      pageProps = await Component.getInitialProps(ctx);
+    }
+    pageProps.query = ctx.query;
+    return { pageProps };
+  };
+  
+  export default withData(MyApp);

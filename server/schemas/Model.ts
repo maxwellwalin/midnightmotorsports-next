@@ -13,6 +13,16 @@ export const Model = list({
                 inlineConnect: true
             }
         }),
+        images: relationship({
+            ref: 'ModelImage.model',
+            many: true,
+            ui: {
+                displayMode: 'cards',
+                cardFields: ['name', 'image', 'altText'],
+                inlineCreate: { fields: ['name', 'image', 'altText'] },
+                inlineEdit: { fields: ['name', 'image', 'altText'] },
+            },
+        }),
         year: relationship({
             ref: 'Year',
             ui: {
