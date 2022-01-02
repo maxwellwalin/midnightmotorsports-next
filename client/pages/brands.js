@@ -24,15 +24,13 @@ export default function Brands() {
     if (loading) return <p>Loading...</p>
     if (error) return <p>Error: {error}</p>
 
-    console.log(data.allMakes)
-
     return (
         <Container>
             <PageTitle>Our Brands</PageTitle>
             <IconContainer>
                 {data.allMakes.map((make) => {
                     return (
-                        <Link href={`/brand/${make.id}`}>
+                        <Link href={`/brand/${make.id}`} shallow>
                             <BrandSelectIcon src={make?.image?.image?.publicUrlTransformed} />
                         </Link>
                     )
@@ -72,39 +70,3 @@ const BrandSelectIcon = styled.img`
         filter: drop-shadow(0px 0px 5px rgb(255, 255, 255));
      }
 `
-
-// const MitsubishiLogo = styled.img`
-//     width: 17rem;
-//     height: 20rem;
-
-//     &:hover {
-//         cursor: pointer;
-//         transition: 300ms;
-//         -webkit-filter: drop-shadow(0px 0px 5px rgb(255, 255, 255));
-//         filter: drop-shadow(0px 0px 5px rgb(255, 255, 255));
-//     }
-// `
-
-// const SubaruLogo = styled.img`
-//     width: 33rem;
-//     height: 20rem;
-
-//     &:hover {
-//         cursor: pointer;
-//         transition: 300ms;
-//         -webkit-filter: drop-shadow(0px 0px 5px rgb(255, 255, 255));
-//         filter: drop-shadow(0px 0px 5px rgb(255, 255, 255));
-//     }
-// `
-
-// const BMWLogo = styled.img`
-//     width: 18rem;
-//     height: 18rem;
-
-//     &:hover {
-//         cursor: pointer;
-//         transition: 300ms;
-//         -webkit-filter: drop-shadow(0px 0px 5px rgb(255, 255, 255));
-//         filter: drop-shadow(0px 0px 5px rgb(255, 255, 255));
-//     }
-// `
