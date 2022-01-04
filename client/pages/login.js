@@ -1,5 +1,17 @@
+import styled from "styled-components";
+import SignIn from "../components/SignIn";
+
+const GridStyles = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 2rem;
+`;
+
 export default function Login() {
-    return (
-        <h1>This is the login page</h1>
-    )
+  return (
+    <GridStyles>
+      <SignIn />
+      {/* <SignUp /> */}
+    </GridStyles>
+  );
 }
