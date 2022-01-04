@@ -3,6 +3,7 @@ import { faInstagram, faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { useUser } from "./User";
+import SignOut from "./SignOut";
 
 export default function Header() {
   const user = useUser();
@@ -38,9 +39,7 @@ export default function Header() {
         />
       </A>
       {user && (
-        <Link href="/logout" shallow>
-          <A>Logout</A>
-        </Link>
+        <SignOut A={A} />
       )}
       {!user && (
         <Link href="/login" shallow>
