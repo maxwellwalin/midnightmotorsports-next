@@ -8,10 +8,9 @@ import DisplayError from "./ErrorMessage.js";
 import React, { Component } from "react";
 import Select from "react-select";
 
-
 const CREATE_PRODUCT_MUTATION = gql`
   mutation CREATE_PRODUCT_MUTATION($data: PartCreateInput!) {
-    item: createPart(data: $data) {
+    createPart(data: $data) {
       id
       label: name
       __typename
@@ -19,9 +18,7 @@ const CREATE_PRODUCT_MUTATION = gql`
   }
 `;
 
-export default function AddProduct({ categories }) {
-  
-
+export default function AddProduct({ categories, models }) {
   const { inputs, handleChange, clearForm, resetForm } = useForm({
     name: "Test part",
     description: "Test description",
@@ -29,8 +26,8 @@ export default function AddProduct({ categories }) {
     lastYear: "2021",
     price: 1234,
     quantity: 2,
-    //category
-    //partNumber
+    categories: { value: "61ce38a870a8de22b465ba84", label: "engine" },
+    partNumber: "12345",
     //model
   });
 
@@ -74,24 +71,35 @@ export default function AddProduct({ categories }) {
     }
   );
 
-  
-  const options = categories.map((category) => {
+  const categoryOptions = categories.map((category) => {
     return {
       value: category.name,
       label: category.name,
-    }
-  })
-  console.log(options)
+      type: "category",
+      id: category.id,
+    };
+  });
+
+  const modelOptions = models.map((model) => {
+    return {
+      value: model.name,
+      label: model.name,
+      type: "model",
+      id: model.id,
+    };
+  });
+
   return (
     <Form
       onSubmit={async (e) => {
         e.preventDefault();
         const res = await createProduct();
+        console.log(res);
         clearForm();
         // Go to the products page
-        Router.push({
-          pathname: `/product/${res.data.createProduct.id}`,
-        });
+        // Router.push({
+        //   pathname: `/product/${res.data.createProduct.id}`,
+        // });
       }}
     >
       <DisplayError error={error} />
@@ -104,6 +112,17 @@ export default function AddProduct({ categories }) {
             id="name"
             placeholder="name"
             value={inputs.name}
+            onChange={handleChange}
+          />
+        </label>
+        <label htmlFor="partNumber">
+          Part Number
+          <input
+            type="text"
+            name="partNumber"
+            id="partNumber"
+            placeholder="partNumber"
+            value={inputs.partNumber}
             onChange={handleChange}
           />
         </label>
@@ -150,7 +169,7 @@ export default function AddProduct({ categories }) {
           />
         </label>
         <label htmlFor="price">
-          price
+          Price
           <input
             type="number"
             name="price"
@@ -161,7 +180,7 @@ export default function AddProduct({ categories }) {
           />
         </label>
         <label htmlFor="quantity">
-          quantity
+          Quantity
           <input
             type="number"
             name="quantity"
@@ -171,15 +190,24 @@ export default function AddProduct({ categories }) {
             onChange={handleChange}
           />
         </label>
-        <label htmlFor="categories">
-          categories
-          <input
-            type="number"
-            name="categories"
-            id="categories"
-            placeholder="categories"
-            value={inputs.categories}
+        <label htmlFor="category">
+          Category
+          <Select
+            options={categoryOptions}
+            name="category"
+            id="category"
             onChange={handleChange}
+            value={inputs.category}
+          />
+        </label>
+        <label htmlFor="model">
+          Model
+          <Select
+            options={modelOptions}
+            name="model"
+            id="model"
+            onChange={handleChange}
+            value={inputs.model}
           />
         </label>
 
