@@ -2,8 +2,10 @@ import styled from "styled-components";
 import { faInstagram, faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
+import { useUser } from "./User";
 
 export default function Header() {
+  const user = useUser();
   return (
     <HeaderStyles>
       <Div>
@@ -35,9 +37,16 @@ export default function Header() {
           alt="midnight motorsports black and white logo"
         />
       </A>
-      <Link href="/login" shallow>
-        <A>Login</A>
-      </Link>
+      {user && (
+        <Link href="/logout" shallow>
+          <A>Logout</A>
+        </Link>
+      )}
+      {!user && (
+        <Link href="/login" shallow>
+          <A>Login</A>
+        </Link>
+      )}
     </HeaderStyles>
   );
 }
