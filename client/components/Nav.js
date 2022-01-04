@@ -15,16 +15,23 @@ function NavBar() {
         </Link>
       </StyledLink>
       <StyledLink>
-        <Link className={router.pathname == "/brands" ? "active" : "about"} href="/brands" shallow>
+        <Link className={router.pathname == "/brands" ? "active" : "brands"} href="/brands" shallow>
           <div>
             Shop <DisappearingDiv>Products</DisappearingDiv>
           </div>
         </Link>
       </StyledLink>
       <StyledLink>
-        <Link className={router.pathname == "/contact" ? "active" : "about"} href="/contact" shallow>
+        <Link className={router.pathname == "/contact" ? "active" : "contact"} href="/contact" shallow>
           <div>
             Contact <DisappearingDiv>Us</DisappearingDiv>
+          </div>
+        </Link>
+      </StyledLink>
+      <StyledLink>
+        <Link className={router.pathname == "/sell" ? "active" : "sell"} href="/sell" shallow>
+          <div>
+            Sell <DisappearingDiv>Products</DisappearingDiv>
           </div>
         </Link>
       </StyledLink>
