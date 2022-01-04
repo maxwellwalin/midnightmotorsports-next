@@ -34,9 +34,8 @@ export default function SignIn() {
     refetchQueries: [{ query: CURRENT_USER_QUERY }],
   });
   async function handleSubmit(e) {
-    console.log(inputs);
+    e.preventDefault();
     const res = await signin();
-    console.log(res);
     resetForm();
   }
   const error =
