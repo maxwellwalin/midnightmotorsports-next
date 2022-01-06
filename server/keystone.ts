@@ -15,6 +15,8 @@ import { Category } from './schemas/Category';
 import { MakeImage } from './schemas/MakeImage';
 import { ModelImage } from './schemas/ModelImage';
 import { CategoryImage } from './schemas/CategoryImage';
+import { Role } from './schemas/Role';
+import { permissionsList } from './schemas/fields';
 
 const databaseURL =
   process.env.DATABASE_URL || 'mongodb://localhost/keystone-midnight-motorsports-next';
@@ -57,7 +59,8 @@ export default withAuth(
       PartImage,
       Year,
       Category,
-      CategoryImage
+      CategoryImage,
+      Role,
     }),
     ui: {
       isAccessAllowed: ({ session }) => {
@@ -65,6 +68,8 @@ export default withAuth(
         return !!session?.data;
       },
     },
-    session: withItemData(statelessSessions(sessionConfig))
+    session: withItemData(statelessSessions(sessionConfig), {
+      User: `id name email role { ${permissionsList.join(' ')} }`,
+    }),
   })
 )
