@@ -5,7 +5,7 @@ import { rules } from '../access';
 export const Make = list({
     access: {
         create: rules.canManageParts,
-        read: rules.canManageParts,
+        read: () => true,
         update: rules.canManageParts,
         delete: rules.canManageParts,
     },

@@ -5,7 +5,7 @@ import { isSignedIn, rules } from '../access';
 export const Part = list({
     access: {
         create: rules.canManageParts,
-        read: rules.canManageParts,
+        read: () => true,
         update: rules.canManageParts,
         delete: rules.canManageParts,
     },

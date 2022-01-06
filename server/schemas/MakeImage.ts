@@ -14,7 +14,7 @@ export const cloudinary = {
 export const MakeImage = list({
   access: {
     create: rules.canManageParts,
-    read: rules.canManageParts,
+    read: () => true,
     update: rules.canManageParts,
     delete: rules.canManageParts,
 },
