@@ -10,6 +10,11 @@ export const User = list({
     // only people with the permission can delete themselves
     delete: permissions.canManageUsers,
   },
+  ui: {
+    // hide the backend UI from regular users
+    hideCreate: (args) => !permissions.canManageUsers(args),
+    hideDelete: (args) => !permissions.canManageUsers(args),
+  },
   fields: {
     name: text({ isRequired: true }),
     email: text({ isRequired: true, isUnique: true }),

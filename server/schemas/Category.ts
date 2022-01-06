@@ -1,6 +1,6 @@
 import { relationship, text } from "@keystone-next/fields";
 import { list } from "@keystone-next/keystone/schema";
-import { rules } from "../access";
+import { permissions, rules } from "../access";
 
 export const Category = list({
   access: {
@@ -8,6 +8,11 @@ export const Category = list({
     read: () => true,
     update: rules.canManageParts,
     delete: rules.canManageParts,
+  },
+  ui: {
+    // hide the backend UI from regular users
+    hideCreate: (args) => !permissions.canManageParts(args),
+    hideDelete: (args) => !permissions.canManageParts(args),
   },
   fields: {
     name: text({ isRequired: true }),
