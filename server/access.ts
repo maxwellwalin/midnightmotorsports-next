@@ -26,4 +26,14 @@ export const rules = {
         }
         return false;
     },
+    canManageUsers({ session }: ListAccessArgs) {
+        if (!isSignedIn({ session })) {
+          return false;
+        }
+        if (permissions.canManageUsers({ session })) {
+          return true;
+        }
+        // Otherwise they may only update themselves!
+        return { id: session.itemId };
+      },
 }
