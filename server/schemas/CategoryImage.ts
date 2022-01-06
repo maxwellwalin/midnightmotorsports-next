@@ -2,6 +2,7 @@ import 'dotenv/config';
 import { relationship, text } from '@keystone-next/fields';
 import { list } from '@keystone-next/keystone/schema';
 import { cloudinaryImage } from '@keystone-next/cloudinary';
+import { rules } from '../access';
 
 export const cloudinary = {
   cloudName: process.env.CLOUDINARY_CLOUD_NAME,
@@ -11,6 +12,12 @@ export const cloudinary = {
 };
 
 export const CategoryImage = list({
+  access: {
+    create: rules.canManageParts,
+    read: rules.canManageParts,
+    update: rules.canManageParts,
+    delete: rules.canManageParts,
+},
   fields: {
     image: cloudinaryImage({
       cloudinary,
