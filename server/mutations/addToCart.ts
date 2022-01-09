@@ -13,7 +13,7 @@ async function addToCart(
   console.log('ADDING TO CART!');
   // See if user is signed in
   const sesh = context.session as Session;
-  if (!sesh.itemId) {
+  if (!sesh || !sesh.itemId) {
     throw new Error('You must be logged in to do this!');
   }
   // Query users cart
