@@ -31,6 +31,14 @@ export default function Categories({ query }) {
                 Choose A Category:
             </PageTitle>
             <CategoryContainer>
+                <CategoryCard>
+                    <Link href={`/model/${query.modelID}`} shallow>
+                        <div>
+                            <img src={data.allCategories[0].image.image.publicUrlTransformed}></img>
+                            <div>ALL PARTS</div>
+                        </div>
+                    </Link>
+                </CategoryCard>
                 {data.allCategories.map((category) => {
                     return (
                         <CategoryCard key={category.id}>
