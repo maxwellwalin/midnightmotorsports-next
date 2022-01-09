@@ -1,9 +1,11 @@
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+import { useCart } from '../lib/CartState';
 
 function NavBar() {
   const router = useRouter();
+  const { openCart } = useCart();
 
   return (
     <Nav>
@@ -28,6 +30,7 @@ function NavBar() {
           </div>
         </Link>
       </StyledLink>
+      <button type="button" onClick={openCart}>My Cart</button>
     </Nav>
   )
 }
