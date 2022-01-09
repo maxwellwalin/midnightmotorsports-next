@@ -48,12 +48,19 @@ export default function ProductsPage({ query }) {
     if (loading) return <p>Loading...</p>
     if (error) return <p>Error: {error}</p>
 
-    const filteredParts = data.Model.parts.map((part) => {
-        return ({
-            ...part,
-            categories: part.categories.filter(category => category.name == query.categoryName)
-        })
-    }).filter(part => part.categories.length > 0)
+    let filteredParts = data.Model.parts
+    let modelName = data.Model.name.toUpperCase()
+
+    if (query.categoryName) {
+        filteredParts = data.Model.parts.map((part) => {
+            return ({
+                ...part,
+                categories: part.categories.filter(category => category.name == query.categoryName)
+            })
+        }).filter(part => part.categories.length > 0)
+
+        modelName += " " + query.categoryName[0].toUpperCase() + query.categoryName.slice(1);
+    }
 
     return (
         <div>
@@ -65,7 +72,7 @@ export default function ProductsPage({ query }) {
             <Container>
                 <ModelHero style={{
                     backgroundImage: `url(${data.Model.images.filter(image => image.name == `${data.Model.name}hero`)[0].image.publicUrlTransformed})`}}>
-                    <ModelName>{data.Model.name.toUpperCase() + " " + query.categoryName.toUpperCase()} Parts</ModelName>
+                    <ModelName>{modelName} Parts</ModelName>
                 </ModelHero>
                 <PartsContainer>
                     {filteredParts.map(part => {
