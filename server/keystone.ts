@@ -17,6 +17,7 @@ import { ModelImage } from './schemas/ModelImage';
 import { CategoryImage } from './schemas/CategoryImage';
 import { Role } from './schemas/Role';
 import { permissionsList } from './schemas/fields';
+import { CartItem } from './schemas/CartItem';
 
 const databaseURL =
   process.env.DATABASE_URL || 'mongodb://localhost/keystone-midnight-motorsports-next';
@@ -61,6 +62,7 @@ export default withAuth(
       Category,
       CategoryImage,
       Role,
+      CartItem,
     }),
     ui: {
       isAccessAllowed: ({ session }) => {
