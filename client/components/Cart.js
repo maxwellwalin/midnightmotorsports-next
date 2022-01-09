@@ -5,6 +5,8 @@ import Supreme from "./styles/Supreme";
 import { useUser } from "./User";
 import formatMoney from "../lib/formatMoney";
 import calcTotalPrice from "../lib/calcTotalPrice";
+import { useCart } from "../lib/CartState";
+import CloseButton from "./styles/CloseButton";
 
 const CartItemStyles = styled.li`
   padding: 1rem 0;
@@ -47,21 +49,22 @@ function CartItem({ cartItem }) {
 
 export default function Cart() {
   const me = useUser();
+  const { cartOpen, closeCart } = useCart();
   if (!me) return null;
-  console.log(me);
   return (
-    <CartStyles open={true}>
+    <CartStyles open={cartOpen}>
       <header>
         <Supreme>{me.name}'s Cart</Supreme>
-        <ul>
-          {me.cart.map((cartItem) => (
-            <CartItem key={cartItem.id} cartItem={cartItem} />
-          ))}
-        </ul>
-        <footer style={{color: "black"}}>
-            <p>{formatMoney(calcTotalPrice(me.cart))}</p>
-        </footer>
+        <CloseButton onClick={closeCart}>&times;</CloseButton>
       </header>
+      <ul>
+        {me.cart.map((cartItem) => (
+          <CartItem key={cartItem.id} cartItem={cartItem} />
+        ))}
+      </ul>
+      <footer style={{ color: "black" }}>
+        <p>{formatMoney(calcTotalPrice(me.cart))}</p>
+      </footer>
     </CartStyles>
   );
 }
