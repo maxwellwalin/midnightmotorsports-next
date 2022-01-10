@@ -3,16 +3,27 @@ import { createGlobalStyle } from 'styled-components';
 import Header from './Header';
 import Footer from './Footer';
 import Nav from './Nav';
+import Head from 'next/head';
 
 export default function Page({ children }) {
   return (
-    <div>
+    <>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+        <meta name="description" content="Midnight Motorsports is the best place to shop for performance car parts and accessories online. Based in Lake Forest, California, we are an auto-body shop that specializes in performance and maintenance." />
+        <meta property="og:description" content="Midnight Motorsports is the best place to shop for performance car parts and accessories online. Based in Lake Forest, California, we are an auto-body shop that specializes in performance and maintenance." />
+        <meta property="og:type" content="website" />
+        <link rel="icon" href="/images/midnightlogo.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500&display=swap" rel="stylesheet" />
+      </Head>
       <GlobalStyles />
       <Header />
       <Nav />
-      {children}
+      <main>{children}</main>
       <Footer />
-    </div>
+    </>
   );
 }
 
@@ -29,7 +40,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    background: linear-gradient( rgb(0, 0, 0) 25%, rgb(36, 9, 134) 100%, rgb(42, 17, 99) 100%);
+    background: linear-gradient(rgb(0, 0, 0) 25%, rgb(36, 9, 134) 100%, rgb(42, 17, 99) 100%);
     color: white;
   }
 
@@ -37,10 +48,12 @@ const GlobalStyles = createGlobalStyle`
     text-align: center;
     text-decoration: none;
     color: white;
+    transition: 400ms;
   }
 
   a:hover {
     text-decoration: underline;
+    transition: 400ms;
     color: #979aff;
   }
 
