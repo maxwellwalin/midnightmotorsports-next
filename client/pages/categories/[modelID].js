@@ -2,7 +2,8 @@ import { useQuery } from "@apollo/client"
 import gql from "graphql-tag"
 import styled from 'styled-components'
 import Link from "next/link"
-import { PageTitle } from "../brand/[makeID]"
+import { PageTitle } from "../models/[makeID]"
+import capitalize from "../../lib/capitalize"
 
 const ALL_CATEGORIES_QUERY = gql`
     query allCategories {
@@ -28,24 +29,24 @@ export default function Categories({ query }) {
     return (
         <Container>
             <PageTitle>
-                Choose A Category:
+                Choose A Category
             </PageTitle>
             <CategoryContainer>
                 <CategoryCard>
-                    <Link href={`/model/${query.modelID}`} shallow>
+                    <Link href={`/parts/${query.modelID}`} shallow>
                         <div>
-                            <img src={data.allCategories[0].image.image.publicUrlTransformed}></img>
-                            <div>ALL PARTS</div>
+                            <CardImage src={data.allCategories[0].image.image.publicUrlTransformed}></CardImage>
+                            <div>All Parts</div>
                         </div>
                     </Link>
                 </CategoryCard>
                 {data.allCategories.map((category) => {
                     return (
                         <CategoryCard key={category.id}>
-                            <Link href={`/model/${query.modelID}?categoryName=${category.name}`} shallow>
+                            <Link href={`/parts/${query.modelID}?categoryName=${category.name}`} shallow>
                                 <div>
-                                    <img src={category.image.image.publicUrlTransformed}></img>
-                                    <div>{category.name.toUpperCase()}</div>
+                                    <CardImage src={category.image.image.publicUrlTransformed}></CardImage>
+                                    <div>{capitalize(category.name)}</div>
                                 </div>
                             </Link>
                         </CategoryCard>
@@ -70,6 +71,16 @@ const CategoryContainer = styled.div`
 const CategoryCard = styled.div`
     background-color: white;
     color: black;
+    border-radius: 8px;
     text-align: center;
     margin-bottom: 3.5rem;
+
+    &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+`
+
+const CardImage = styled.img`
+    border-radius: 8px 8px 0 0;
 `

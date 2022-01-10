@@ -37,7 +37,7 @@ export default function Brands() {
                 {data.allMakes.map((make) => {
                     return (
                         <div key={make.id}>
-                            <Link href={`/brand/${make.id}`} shallow>
+                            <Link href={`/models/${make.id}`} shallow>
                                 <BrandSelectIcon src={make?.image?.image?.publicUrlTransformed} />
                             </Link>
                         </div>
@@ -52,11 +52,10 @@ const Container = styled.div`
     padding: 3rem 7rem 5rem 7rem;
 `
 
-const PageTitle = styled.div`
+export const PageTitle = styled.div`
     text-align: center;
     font-size: 3rem;
     margin-bottom: 5rem;
-    text-decoration: underline;
 `
 
 const IconContainer = styled.div`

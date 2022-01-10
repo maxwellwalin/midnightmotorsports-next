@@ -3,6 +3,7 @@ import Head from 'next/head'
 import gql from 'graphql-tag'
 import styled from 'styled-components'
 import PartCard from '../../components/PartCard'
+import capitalize from '../../lib/capitalize'
 
 const SINGLE_MODEL_QUERY = gql`
 query Model($id: ID!) {
@@ -66,7 +67,7 @@ export default function ProductsPage({ query }) {
         <div>
             <Head>
                 <title>
-                    {`Midnight Motorsports | ${data.Model.name.toUpperCase()} Parts`}
+                    {`Midnight Motorsports | ${capitalize(data.Model.name)} Parts`}
                 </title>
             </Head>
             <Container>
