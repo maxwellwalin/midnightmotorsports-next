@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { useUser } from "./User";
 import SignOut from "./SignOut";
+import Cart from "./Cart";
 
 export default function Header() {
   const user = useUser();
@@ -46,6 +47,7 @@ export default function Header() {
           <A>Login</A>
         </Link>
       )}
+      <Cart />
     </HeaderStyles>
   );
 }

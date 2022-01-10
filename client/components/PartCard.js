@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import styled from 'styled-components';
 import Link from 'next/link';
+import AddToCart from './AddToCart';
 
 function PartCard(item) {
 
@@ -38,7 +39,8 @@ function PartCard(item) {
                 </LinkStyles>
                 <p className='card-price'>${price / 100}</p>
                 <p className='card-quantity'>{quantity} left in stock!</p>
-                <button className='btn btn-primary'>Add To Cart</button>
+                <AddToCart id={id} />
+                {/* <button className='btn btn-primary'>Add To Cart</button> */}
             </div>
         </PartCardStyle>
     );
