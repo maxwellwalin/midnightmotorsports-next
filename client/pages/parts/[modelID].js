@@ -67,7 +67,7 @@ export default function ProductsPage({ query }) {
         <div>
             <Head>
                 <title>
-                    {`Midnight Motorsports | ${capitalize(data.Model.name)} Parts`}
+                    {`Midnight Motorsports | ${modelName} Parts`}
                 </title>
             </Head>
             <Container>

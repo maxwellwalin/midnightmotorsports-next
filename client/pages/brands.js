@@ -29,7 +29,7 @@ export default function Brands() {
         <Container>
             <Head>
                 <title>
-                    {`Midnight Motorsports | All Brands`}
+                    {`Midnight Motorsports | Our Brands`}
                 </title>
             </Head>
             <PageTitle>Our Brands</PageTitle>

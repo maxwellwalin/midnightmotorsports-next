@@ -45,7 +45,7 @@ function NavBar() {
           </div>
         </Link>
       </StyledLink>
-      <button type="button" onClick={openCart}>
+      <CartIcon type="button" onClick={openCart}>
         My Cart
         <CartCount
           count={user?.cart.reduce(
@@ -53,7 +53,7 @@ function NavBar() {
             0
           )}
         />
-      </button>
+      </CartIcon>
     </Nav>
   );
 }
@@ -94,5 +94,11 @@ export const DisappearingDiv = styled.div`
     display: none;
   }
 `;
+
+const CartIcon = styled.button`
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+`
 
 export default NavBar;
