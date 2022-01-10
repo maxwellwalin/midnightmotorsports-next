@@ -59,7 +59,7 @@ export default function ProductsPage({ query }) {
             })
         }).filter(part => part.categories.length > 0)
 
-        modelName += " " + query.categoryName[0].toUpperCase() + query.categoryName.slice(1);
+        modelName += " " + query.categoryName[0].toUpperCase() + query.categoryName.slice(1)
     }
 
     return (
