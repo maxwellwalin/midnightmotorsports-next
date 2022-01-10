@@ -1,17 +1,17 @@
 import styled from "styled-components";
 import { faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { DisappearingDiv } from "./Nav";
+import { SocialIcon } from "./Header";
 
 export default function Footer() {
   return (
     <FooterStyles>
       <DisappearingDiv>
         <DivA href="https://www.instagram.com/949midnight.motorsports/" target="_blank" rel="noreferrer">
-          <FontAwesomeIcon icon={faInstagram} className="fa-2x"></FontAwesomeIcon>
+          <SocialIcon icon={faInstagram}></SocialIcon>
         </DivA>
         <DivA href="https://www.facebook.com/949midnight.motorsports/" target="_blank" rel="noreferrer">
-          <FontAwesomeIcon icon={faFacebook} className="fa-2x"></FontAwesomeIcon>
+          <SocialIcon icon={faFacebook}></SocialIcon>
         </DivA>
       </DisappearingDiv>
       <A href="https://www.google.com/maps/place/23211+Cherry+Ave,+Lake+Forest,+CA+92630/@33.6259613,-117.6915514,17z/data=!3m1!4b1!4m5!3m4!1s0x80dce90036cce33b:0x967a743faaec8edc!8m2!3d33.6259613!4d-117.6893627" target="_blank" rel='noreferrer'>23211 Cherry Ave, Lake Forest, CA 92630</A>

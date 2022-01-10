@@ -15,22 +15,20 @@ export default function Header() {
           href="https://www.instagram.com/949midnight.motorsports/"
           target="_blank"
           rel="noreferrer"
+          style={{ marginRight: '2rem' }}
         >
-          <FontAwesomeIcon
+          <SocialIcon
             icon={faInstagram}
-            className="fa-2x"
-            style={leftIconStyle}
-          ></FontAwesomeIcon>
+          ></SocialIcon>
         </A>
         <A
           href="https://www.facebook.com/949midnight.motorsports"
           target="_blank"
           rel="noreferrer"
         >
-          <FontAwesomeIcon
+          <SocialIcon
             icon={faFacebook}
-            className="fa-2x"
-          ></FontAwesomeIcon>
+          ></SocialIcon>
         </A>
       </Div>
       <A href="/about">
@@ -63,9 +61,10 @@ const HeaderStyles = styled.header`
 `;
 
 const Div = styled.div`
-  align-self: center;
-  justify-self: center;
+  display: flex;
+  justify-content: center;
 `;
+
 const A = styled.a`
   font-size: 1.5rem;
   text-decoration: none;
@@ -79,6 +78,11 @@ const A = styled.a`
     color: #979aff;
   }
 `;
+
+export const SocialIcon = styled(FontAwesomeIcon)`
+  width: 3rem;
+  height: 3rem;
+`
 
 const MidnightLogo = styled.img`
   width: 15rem;
@@ -98,7 +102,3 @@ const MidnightLogo = styled.img`
     width: 10rem;
   }
 `;
-
-const leftIconStyle = {
-  marginRight: "1rem",
-};
