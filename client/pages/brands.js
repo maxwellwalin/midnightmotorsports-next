@@ -23,7 +23,7 @@ export default function Brands() {
     const { loading, data, error } = useQuery(ALL_MAKES_QUERY);
 
     if (loading) return <p>Loading...</p>
-    if (error) return <p>Error: {error}</p>
+    if (error) return <p>Error: {error.message}</p>
 
     return (
         <Container>
