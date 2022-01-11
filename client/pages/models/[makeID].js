@@ -3,6 +3,7 @@ import gql from "graphql-tag";
 import styled from 'styled-components';
 import Link from 'next/link';
 import Head from 'next/head'
+import capitalize from "../../lib/capitalize";
 
 const SINGLE_MAKE_QUERY = gql`
 query Make($id: ID!) {
@@ -40,10 +41,10 @@ export default function ModelSelectionPage({ query }) {
         <Container>
             <Head>
                 <title>
-                    {`Midnight Motorsports | ${data.Make.name.toUpperCase()} Models`}
+                    {`Midnight Motorsports | ${capitalize(data.Make.name)} Models`}
                 </title>
             </Head>
-            <PageTitle>{data.Make.name.toUpperCase()}</PageTitle>
+            <PageTitle>{capitalize(data.Make.name)} Models</PageTitle>
             <IconContainer>
                 {data.Make.models.map((model) => {
                     return (
@@ -68,7 +69,6 @@ export const PageTitle = styled.div`
     text-align: center;
     font-size: 3rem;
     margin-bottom: 3rem;
-    text-decoration: underline;
 `
 
 const IconContainer = styled.div`
