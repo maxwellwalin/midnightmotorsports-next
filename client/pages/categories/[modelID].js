@@ -25,7 +25,7 @@ export default function Categories({ query }) {
     const { data, loading, error } = useQuery(ALL_CATEGORIES_QUERY)
 
     if (loading) return <p>Loading...</p>
-    if (error) return <p>Error: {error}</p>
+    if (error) return <p>Error: {error.message}</p>
 
     return (
         <>
