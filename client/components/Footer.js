@@ -27,7 +27,7 @@ const FooterStyles = styled.footer`
   width: 100%;
   color: white;
   border-top: 1px solid hsla(0,0%,100%,.1);
-
+list-style: none;
   @media (max-width: 480px) {
     grid-template-columns: 1fr 1fr;
   }
@@ -45,7 +45,7 @@ const DivA = styled.a`
   margin: 0 1rem;
 
   &:hover {
-    text-decoration: underline;
-    color: #979aff;
+    list-style: none;
+    color: gray;
   }
 `

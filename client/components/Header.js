@@ -55,7 +55,7 @@ const HeaderStyles = styled.header`
   background: black;
   width: 100%;
   color: white;
-  border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
+  
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
 `;
@@ -66,7 +66,7 @@ const Div = styled.div`
 `;
 
 const A = styled.a`
-  font-size: 1.5rem;
+  font-size: 17px;
   text-decoration: none;
   color: white;
   align-self: center;
@@ -74,7 +74,7 @@ const A = styled.a`
   &:hover {
     cursor: pointer;
     transition: 400ms;
-    text-decoration: underline;
+    
     color: #979aff;
   }
 `;
@@ -85,11 +85,19 @@ export const SocialIcon = styled(FontAwesomeIcon)`
 `
 
 const MidnightLogo = styled.img`
-  width: 15rem;
+  max-width: 20%;
+  max-height: 20%;
   height: inherit;
   grid-column: 2;
   grid-row: 1;
   margin: 1rem 0;
+  border-radius: 50%;
+
+&:hover {
+  box-shadow: 0px 0px 10px 4px white;
+  transition: 500ms;
+}
+ 
 
   @media (max-width: 650px) {
     margin: 0;
