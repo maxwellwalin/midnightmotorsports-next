@@ -15,8 +15,6 @@ const CartStyles = styled.div`
   transition: all 0.3s;
   box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
   z-index: 5;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
   ${(props) => props.open && `transform: translateX(0);`};
   header {
     border-bottom: 5px solid var(--black);

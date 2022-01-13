@@ -29,7 +29,7 @@ export const User = list({
     }),
     role: relationship({
       ref: 'Role.assignedTo',
-    })
-    // cart, orders
+    }),
+    orders: relationship({ ref: 'Order.user', many: true }),
   },
 });

@@ -47,7 +47,7 @@ export default function ProductsPage({ query }) {
     })
 
     if (loading) return <p>Loading...</p>
-    if (error) return <p>Error: {error}</p>
+    if (error) return <p>Error: {error.message}</p>
 
     let filteredParts = data.Model.parts
     let modelName = data.Model.name.toUpperCase()

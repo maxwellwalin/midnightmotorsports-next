@@ -49,7 +49,7 @@ function NavBar() {
         My Cart
         <CartCount
           count={user?.cart.reduce(
-            (tally, cartItem) => tally + cartItem.quantity,
+            (tally, cartItem) => tally + (cartItem.part ? cartItem.quantity : 0),
             0
           )}
         />
