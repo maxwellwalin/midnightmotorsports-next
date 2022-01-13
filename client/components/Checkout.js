@@ -25,6 +25,8 @@ function CheckoutForm() {
   async function handleSubmit(e) {
     // 1. Stop the form from submitting and turn the loader one
     e.preventDefault();
+
+    
     setLoading(true);
     console.log("We gotta do some work..");
     // 2. Start the page transition
@@ -41,7 +43,7 @@ function CheckoutForm() {
       nProgress.done();
       return; // stops the checkout from happening
     }
-    // 5. Send the token from step 3 to our keystone server, via a custom mutation!
+    // // 5. Send the token from step 3 to our keystone server, via a custom mutation!
     // const order = await checkout({
     //   variables: {
     //     token: paymentMethod.id,
@@ -59,9 +61,9 @@ function CheckoutForm() {
     // // 7. Close the cart
     // closeCart();
 
-    // 8. turn the loader off
-    setLoading(false);
-    nProgress.done();
+    // // 8. turn the loader off
+    // setLoading(false);
+    // nProgress.done();
   }
   return (
       <CheckoutFormStyles onSubmit={handleSubmit}>
