@@ -70,4 +70,48 @@ const GlobalStyles = createGlobalStyle`
   button:hover {
     cursor: pointer;
   }
+
+  .aboutContainer {
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+align-items: center;
+
+  }
+
+.box1 {
+  display: flex;
+  flex-direction: row;
+  font-size: 14px;
+  padding: 3%;
+  display: flex;
+  align-items: center;
+  margin: 5%;
+  border-radius: 10px;
+  background:gray;
+  width:80%;
+  height:400px;
+  animation-name: fadeBox;
+  animation-duration: 3ms;
+}
+
+@keyframes fadeBox {
+  0% {opacity: 0%}
+}
+
+.aboutPar {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  padding: 3%;
+  background: darkgray;
+  border-radius: 4px;
+  box-shadow: 0px 0px 30px 5px black;
+}
+
+.zimg {
+  box-shadow: 0px 0px 30px 5px black;
+  margin: 3%;
+  max-width: 30%;
+  max-height: 500px;
+}
+
 `;

@@ -66,7 +66,7 @@ background: darkgrey;
   font-size: 12px;
   color: black;
   padding: 20px;
-  
+  border-bottom: 1px solid gray;
   justify-items: center;
 
 &:hover {
