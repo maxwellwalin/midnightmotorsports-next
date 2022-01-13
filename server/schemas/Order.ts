@@ -4,6 +4,12 @@ import { isSignedIn, permissions, rules } from "../access";
 import formatMoney from "../lib/formatMoney";
 
 export const Order = list({
+  access: {
+    create: isSignedIn,
+    read: rules.canOrder,
+    update: permissions.canManageOrders,
+    delete: permissions.canManageOrders,
+  },
   fields: {
     label: virtual({
         graphQLReturnType: 'String',
