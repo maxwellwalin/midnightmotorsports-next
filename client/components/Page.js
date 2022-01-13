@@ -40,7 +40,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    background: linear-gradient(rgb(0, 0, 0) 25%, rgb(36, 9, 134) 100%, rgb(42, 17, 99) 100%);
+    background: darkgrey;
     color: white;
   }
 
@@ -52,13 +52,19 @@ const GlobalStyles = createGlobalStyle`
   }
 
   a:hover {
-    text-decoration: underline;
+    color: black;
+    border-bottom: 1px solid black;
     transition: 400ms;
-    color: #979aff;
+    margin-bottom: 20px;
+    
   }
 
   button {
-    font-family: 'Sora', sans-serif;
+    display: flex;
+    align-content: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+
   }
 
   button:hover {
