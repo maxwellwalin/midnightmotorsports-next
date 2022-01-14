@@ -60,36 +60,33 @@ function NavBar() {
 
 const Nav = styled.nav`
 list-style: none;
-background: darkgrey;
+background: #292929;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   font-size: 12px;
-  color: black;
+  color: #DBE7FF;
   padding: 20px;
-  border-bottom: 1px solid gray;
+  border-bottom:2px solid cyan;
   justify-items: center;
 
-&:hover {
-  padding:30px;
-  transition: 500ms;
-}
+
 
 `
 const StyledLink = styled.div`
   text-decoration: none;
-  color: black;
+  color: white;
 
   &:hover {
-    font-size: 13px;
-
-    transition: 400ms;
+  
+border-bottom: 1px solid cyan;
+    transition: 500ms;
     cursor: pointer;
    
-    color: white;
+    color: cyan;
   }
 
   &.active {
-    color: #979aff;
+    color: cyan;
     
   }
 `;
