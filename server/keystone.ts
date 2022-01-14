@@ -19,6 +19,8 @@ import { Role } from './schemas/Role';
 import { permissionsList } from './schemas/fields';
 import { CartItem } from './schemas/CartItem';
 import { extendGraphqlSchema } from './mutations';
+import { OrderItem } from './schemas/OrderItem';
+import { Order } from './schemas/Order';
 
 const databaseURL =
   process.env.DATABASE_URL || 'mongodb://localhost/keystone-midnight-motorsports-next';
@@ -64,6 +66,8 @@ export default withAuth(
       CategoryImage,
       Role,
       CartItem,
+      OrderItem,
+      Order,
     }),
     extendGraphqlSchema,
     ui: {
