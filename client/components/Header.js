@@ -32,10 +32,7 @@ export default function Header() {
         </A>
       </Div>
       <A href="/about">
-        <MidnightLogo
-          src="https://res.cloudinary.com/dtpgzynwd/image/upload/v1641101298/midnight-motorsports/midnightlogo_ilxpls.png"
-          alt="midnight motorsports black and white logo"
-        />
+        <h1>Midnight Motorsports</h1>
       </A>
       {user && (
         <SignOut A={A} />
@@ -55,7 +52,7 @@ const HeaderStyles = styled.header`
   background: black;
   width: 100%;
   color: white;
-  
+  border-bottom: 1px solid cyan;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
 `;
@@ -75,7 +72,7 @@ const A = styled.a`
     cursor: pointer;
     transition: 400ms;
     
-    color: #979aff;
+    color: cyan;
   }
 `;
 
@@ -84,20 +81,17 @@ export const SocialIcon = styled(FontAwesomeIcon)`
   height: 3rem;
 `
 
-const MidnightLogo = styled.img`
+const MidnightLogo = styled.h1`
   max-width: 20%;
   max-height: 20%;
+  font-style: italic;
   height: inherit;
   grid-column: 2;
   grid-row: 1;
   margin: 1rem 0;
   border-radius: 50%;
 
-&:hover {
-  box-shadow: 0px 0px 10px 4px white;
-  transition: 500ms;
-}
- 
+
 
   @media (max-width: 650px) {
     margin: 0;
