@@ -31,9 +31,11 @@ export default function Header() {
           ></SocialIcon>
         </A>
       </Div>
-      <A href="/about">
-        <h1>Midnight Motorsports</h1>
-      </A>
+      <Link href="/about" shallow>
+        <MidnightTitle>
+          MIDNIGHT <span style={{display: 'block', marginLeft: '4rem'}}>MOTORSPORTS</span>
+          </MidnightTitle>
+      </Link>
       {user && (
         <SignOut A={A} />
       )}
@@ -49,12 +51,12 @@ export default function Header() {
 
 const HeaderStyles = styled.header`
   display: grid;
-  background: black;
-  width: 100%;
+  background: #0b132b;
   color: white;
-  border-bottom: 1px solid cyan;
+  border-bottom: 1px solid #3A506B;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
+  justify-items: center;
+  padding: 1rem;
 `;
 
 const Div = styled.div`
@@ -63,22 +65,34 @@ const Div = styled.div`
 `;
 
 const A = styled.a`
-  font-size: 17px;
   text-decoration: none;
   color: white;
   align-self: center;
+  transition: 400ms;
 
   &:hover {
-    cursor: pointer;
     transition: 400ms;
-    
-    color: cyan;
+    cursor: pointer;
+    color: #6FFFE9;
   }
 `;
 
 export const SocialIcon = styled(FontAwesomeIcon)`
-  width: 3rem;
-  height: 3rem;
+  width: 2rem;
+  height: 2rem;
+`
+
+const MidnightTitle = styled.h1`
+  font-style: italic;
+  font-weight: bolder;
+  transition: 400ms;
+  margin: 0;
+
+  &:hover {
+    transition: 400ms;
+    color: #6FFFE9;
+    cursor: pointer;
+  }
 `
 
 const MidnightLogo = styled.h1`

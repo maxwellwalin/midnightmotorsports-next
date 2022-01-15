@@ -40,7 +40,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    background: black;
+    background: #0B132B;
     color: white;
   }
 
@@ -51,19 +51,14 @@ const GlobalStyles = createGlobalStyle`
     transition: 400ms;
   }
 
-
   button {
     display: flex;
     align-content: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
-
   }
 
   button:hover {
     cursor: pointer;
   }
-
-
-
 `;

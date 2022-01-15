@@ -17,12 +17,12 @@ const CartStyles = styled.div`
   z-index: 5;
   ${(props) => props.open && `transform: translateX(0);`};
   header {
-    border-bottom: 5px solid var(--black);
+    border-bottom: 5px solid var(--#0b132b);
     margin-bottom: 2rem;
     padding-bottom: 2rem;
   }
   footer {
-    border-top: 10px double var(--black);
+    border-top: 10px double var(--#0b132b);
     margin-top: 2rem;
     padding-top: 2rem;
     /* display: grid;
