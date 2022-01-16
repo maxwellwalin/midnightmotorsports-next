@@ -31,6 +31,7 @@ align-items: center;
   }
 
 .box1 {
+  
   display: flex;
   flex-direction: row;
   font-size: 14px;
@@ -62,6 +63,7 @@ align-items: center;
 }
 
 .box2 {
+  border-radius: 10px;
 border: 1px solid cyan;
 height:500px;
 margin-left:3%;

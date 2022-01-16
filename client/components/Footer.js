@@ -39,6 +39,13 @@ const A = styled.a`
   text-decoration: none;
   color: white;
   font-size: 1.2rem;
+  &:hover {
+    list-style: none;
+    color: cyan;
+    border-bottom: 1px solid cyan;
+    transition: 500ms;
+  }
+
 `
 
 const DivA = styled.a`
@@ -46,6 +53,8 @@ const DivA = styled.a`
 
   &:hover {
     list-style: none;
-    color: gray;
+    color: cyan;
+    
+    transition: 500ms;
   }
 `

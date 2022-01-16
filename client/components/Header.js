@@ -52,7 +52,7 @@ const HeaderStyles = styled.header`
   background: black;
   width: 100%;
   color: white;
-  border-bottom: 1px solid cyan;
+  border-bottom: 2px solid cyan;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
 `;
