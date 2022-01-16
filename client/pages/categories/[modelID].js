@@ -76,7 +76,7 @@ const CategoryContainer = styled.div`
 
 const CategoryCard = styled.div`
     background-color: white;
-    color: black;
+    color: #0b132b;
     border-radius: 8px;
     text-align: center;
     margin-bottom: 3.5rem;

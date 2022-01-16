@@ -115,7 +115,7 @@ const ModelHero = styled.div`
 `
 
 const ModelName = styled.div`
-    text-shadow: 0px 0px 10px black;
+    text-shadow: 0px 0px 10px #0b132b;
     font-size: 4rem;
 `
 

@@ -28,7 +28,7 @@ const Form = styled.form`
     width: 100%;
     padding: 0.5rem;
     font-size: 1rem;
-    border: 1px solid black;
+    border: 1px solid #0b132b;
     &:focus {
       outline: 0;
       border-color: var(--red);
@@ -37,7 +37,7 @@ const Form = styled.form`
   button,
   input[type='submit'] {
     width: auto;
-    background: black;
+    background: #0b132b;
     color: white;
     border: 0;
     font-size: 2rem;

@@ -59,35 +59,30 @@ function NavBar() {
 }
 
 const Nav = styled.nav`
-list-style: none;
-background: #292929;
+  background-color: #1C2541;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  font-size: 12px;
-  color: #DBE7FF;
-  padding: 20px;
-  border-bottom:2px solid cyan;
+  padding: 1rem 30%;
+  border-bottom: 1px solid #3A506B;
   justify-items: center;
-
-
-
 `
 const StyledLink = styled.div`
   text-decoration: none;
   color: white;
+  transition: 400ms;
+  padding: 0.5rem 1rem;
+  border: 1px solid #6FFFE9;
 
   &:hover {
-  
-border-bottom: 1px solid cyan;
-    transition: 500ms;
+    transition: 400ms;
     cursor: pointer;
-   
-    color: cyan;
+    color: #6FFFE9;
+    background-color: #0B132B;
+    border: 1px solid #6FFFE9;
   }
 
   &.active {
-    color: cyan;
-    
+    color: #6FFFE9;
   }
 `;
 

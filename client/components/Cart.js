@@ -15,7 +15,7 @@ const CartItemStyles = styled.li`
   border-bottom: 1px solid grey;
   display: grid;
   grid-template-columns: auto 1fr auto;
-  color: black;
+  color: #0b132b;
   img {
     margin-right: 1rem;
   }
@@ -65,7 +65,7 @@ export default function Cart() {
           <CartItem key={cartItem.id} cartItem={cartItem} />
         ))}
       </ul>
-      <footer style={{ color: "black" }}>
+      <footer style={{ color: "#0b132b" }}>
         <p>{formatMoney(calcTotalPrice(me.cart))}</p>
         <Checkout></Checkout>
       </footer>
