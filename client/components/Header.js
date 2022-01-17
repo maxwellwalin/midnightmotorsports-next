@@ -53,11 +53,7 @@ const HeaderStyles = styled.header`
   display: grid;
   background: #0b132b;
   color: white;
-<<<<<<< HEAD
-  border-bottom: 2px solid cyan;
-=======
   border-bottom: 1px solid #3A506B;
->>>>>>> main
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
   padding: 1rem;
