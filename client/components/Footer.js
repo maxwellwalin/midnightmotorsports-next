@@ -56,20 +56,8 @@ const StyledLink = styled.div`
 const A = styled.a`
   text-decoration: none;
   color: white;
-<<<<<<< HEAD
-  font-size: 1.2rem;
-  &:hover {
-    list-style: none;
-    color: cyan;
-    border-bottom: 1px solid cyan;
-    transition: 500ms;
-  }
-
-`
-=======
   align-self: center;
   transition: 400ms;
->>>>>>> main
 
   &:hover {
     transition: 400ms;
@@ -86,15 +74,8 @@ const SocialA = styled.a`
   transition: 400ms;
 
   &:hover {
-<<<<<<< HEAD
-    list-style: none;
-    color: cyan;
-    
-    transition: 500ms;
-=======
     transition: 400ms;
     cursor: pointer;
     color: #6FFFE9;
->>>>>>> main
   }
 `;
