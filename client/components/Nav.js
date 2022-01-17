@@ -4,12 +4,10 @@ import Link from "next/link";
 import { useCart } from "../lib/CartState";
 import CartCount from "./CartCount";
 import { useUser } from "./User";
-
 function NavBar() {
   const user = useUser();
   const router = useRouter();
   const { openCart } = useCart();
-
   return (
     <Nav>
       <StyledLink>
@@ -57,7 +55,6 @@ function NavBar() {
     </Nav>
   );
 }
-
 const Nav = styled.nav`
   background-color: #1C2541;
   display: grid;
@@ -72,7 +69,6 @@ const StyledLink = styled.div`
   transition: 400ms;
   padding: 0.5rem 1rem;
   border: 1px solid #6FFFE9;
-
   &:hover {
     transition: 400ms;
     cursor: pointer;
@@ -80,26 +76,27 @@ const StyledLink = styled.div`
     background-color: #0B132B;
     border: 1px solid #6FFFE9;
   }
-
   &.active {
     color: #6FFFE9;
   }
 `;
-
 export const DisappearingDiv = styled.div`
   display: inline;
   align-self: center;
   justify-self: center;
-
   @media (max-width: 480px) {
     display: none;
   }
 `;
-
 const CartIcon = styled.button`
   position: fixed;
   top: 1rem;
   right: 1rem;
 `
-
 export default NavBar;
+
+
+
+
+
+
