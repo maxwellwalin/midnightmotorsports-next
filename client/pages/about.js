@@ -9,9 +9,9 @@ export default function About() {
               <div className='aboutAndTest'>
                 <p className="aboutPar"><h1>About Us</h1>Midnight Motorsports is a state-of-the-art car servicing and car parts hub. It was founded here in Lake Forest, California in 2018. Since then, we have serviced and assisted over 1,000 customers with their car needs. Here are some of our testimonials:</p>
                 <div className='testBox'>
-                <div className='testimonials'></div>
-                <div className='testimonials'></div>
-                <div className='testimonials'></div>
+                <div className='testimonials'>Chris is an outstanding customer-service oriented owner! - John</div>
+                <div className='testimonials'>What a great place to find car parts! Diamond in the rough. - Mike</div>
+                <div className='testimonials'>We were very satisfied with the products we purchased for our new M4! - Steve</div>
                 </div>
                 </div>
                 <img src='https://res.cloudinary.com/dtpgzynwd/image/upload/v1641101298/midnight-motorsports/midnightlogo_ilxpls.png' alt="midnight motorsports #0b132b and white logo" className="zimg" />
@@ -72,8 +72,6 @@ align-items: center;
 }
 
 .testimonials {
-  border-radius: 5px;
-  border: 2px solid #6FFFE9;
   width: 25%;
   height:100px
 }
