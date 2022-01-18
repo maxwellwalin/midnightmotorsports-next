@@ -63,7 +63,7 @@ const IconContainer = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     justify-items: center;
     align-items: center;
-    gap: 2rem;
+    row-gap: 5rem;
 `
 
 const BrandSelectIcon = styled.img`
