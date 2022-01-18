@@ -60,10 +60,10 @@ export const PageTitle = styled.div`
 
 const IconContainer = styled.div`
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     justify-items: center;
     align-items: center;
-    row-gap: 5rem;
+    gap: 2rem;
 `
 
 const BrandSelectIcon = styled.img`

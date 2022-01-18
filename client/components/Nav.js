@@ -62,6 +62,15 @@ const Nav = styled.nav`
   padding: 1rem 30%;
   border-bottom: 1px solid #3A506B;
   justify-items: center;
+
+  @media screen and (max-width: 1200px) {
+    padding: 1rem 15%;
+  }
+
+  @media screen and (max-width: 700px) {
+    padding: 1rem 5%;
+  }
+
 `
 const StyledLink = styled.div`
   text-decoration: none;
@@ -84,11 +93,12 @@ export const DisappearingDiv = styled.div`
   display: inline;
   align-self: center;
   justify-self: center;
-  @media (max-width: 480px) {
+  @media screen and (max-width: 520px) {
     display: none;
   }
 `;
 const CartIcon = styled.button`
+  display: none;
   position: fixed;
   top: 1rem;
   right: 1rem;
