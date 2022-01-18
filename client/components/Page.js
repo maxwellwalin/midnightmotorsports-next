@@ -44,6 +44,10 @@ const GlobalStyles = createGlobalStyle`
     color: white;
   }
 
+  main {
+    min-height: 628px;
+  }
+
   a {
     text-align: center;
     text-decoration: none;

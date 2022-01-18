@@ -49,13 +49,13 @@ export default function Brands() {
 }
 
 const Container = styled.div`
-    padding: 3rem 7rem 5rem 7rem;
+    padding: 2rem 20% 4rem 20%;
 `
 
 export const PageTitle = styled.div`
     text-align: center;
     font-size: 3rem;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
 `
 
 const IconContainer = styled.div`
@@ -68,7 +68,7 @@ const IconContainer = styled.div`
 
 const BrandSelectIcon = styled.img`
     width: inherit;
-    height: 18rem;
+    height: 12rem;
 
     &:hover {
         cursor: pointer;

@@ -62,7 +62,10 @@ export default function ModelSelectionPage({ query }) {
 }
 
 const Container = styled.div`
-    padding: 3rem 7rem 5rem 7rem;
+    min-height: 628px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 `
 
 export const PageTitle = styled.div`
@@ -72,16 +75,15 @@ export const PageTitle = styled.div`
 `
 
 const IconContainer = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-items: center;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
     align-items: center;
-    row-gap: 5rem;
 `
 
 const ModelSelectIcon = styled.img`
     width: inherit;
-    height: 18rem;
+    height: 12rem;
 
     &:hover {
         cursor: pointer;
