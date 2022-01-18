@@ -39,6 +39,14 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
   }
 
+  :root {
+    --oxford-blue: #0b132bff;
+    --space-cadet: #1c2541ff;
+    --independence: #3a506bff;
+    --maximum-blue-green: #5bc0beff;
+    --turquoise-blue: #6fffe9ff;
+  }
+
   body {
     background: #0B132B;
     color: white;
