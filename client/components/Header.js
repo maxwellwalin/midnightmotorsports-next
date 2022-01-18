@@ -10,7 +10,7 @@ export default function Header() {
   const user = useUser();
   return (
     <HeaderStyles>
-      <Div>
+      <DisappearingDiv>
         <A
           href="https://www.instagram.com/949midnight.motorsports/"
           target="_blank"
@@ -30,7 +30,7 @@ export default function Header() {
             icon={faFacebook}
           ></SocialIcon>
         </A>
-      </Div>
+      </DisappearingDiv>
       <Link href="/about" shallow>
         <MidnightTitle>
           MIDNIGHT <span style={{display: 'block', marginLeft: '4rem'}}>MOTORSPORTS</span>
@@ -57,11 +57,10 @@ const HeaderStyles = styled.header`
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
   padding: 1rem;
-`;
 
-const Div = styled.div`
-  display: flex;
-  justify-content: center;
+  @media screen and (max-width: 650px) {
+    grid-template-columns: 1fr 1fr;
+  }
 `;
 
 const A = styled.a`
@@ -93,28 +92,16 @@ const MidnightTitle = styled.h1`
     color: #6FFFE9;
     cursor: pointer;
   }
+
+  @media screen and (max-width: 450px) {
+    font-size: 1.5rem;
+  }
 `
 
-const MidnightLogo = styled.h1`
-  max-width: 20%;
-  max-height: 20%;
-  font-style: italic;
-  height: inherit;
-  grid-column: 2;
-  grid-row: 1;
-  margin: 1rem 0;
-  border-radius: 50%;
-
-
-
-  @media (max-width: 650px) {
-    margin: 0;
-    height: 12rem;
-    width: 12rem;
-  }
-
-  @media (max-width: 480px) {
-    height: 10rem;
-    width: 10rem;
+const DisappearingDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  @media screen and (max-width: 650px) {
+    display: none;
   }
 `;

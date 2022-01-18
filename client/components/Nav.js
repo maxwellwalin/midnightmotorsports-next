@@ -62,11 +62,20 @@ const Nav = styled.nav`
   padding: 1rem 30%;
   border-bottom: 1px solid #3A506B;
   justify-items: center;
+
+  @media screen and (max-width: 1200px) {
+    padding: 1rem 15%;
+  }
+
+  @media screen and (max-width: 700px) {
+    padding: 1rem 5%;
+  }
+
 `
 const StyledLink = styled.div`
   text-decoration: none;
   color: white;
-  transition: 400ms;
+  transition: 200ms;
   padding: 0.5rem 1rem;
   border: 1px solid #6FFFE9;
   &:hover {
@@ -75,6 +84,7 @@ const StyledLink = styled.div`
     color: #6FFFE9;
     background-color: #0B132B;
     border: 1px solid #6FFFE9;
+    border-radius: 10rem;
   }
   &.active {
     color: #6FFFE9;
@@ -84,7 +94,7 @@ export const DisappearingDiv = styled.div`
   display: inline;
   align-self: center;
   justify-self: center;
-  @media (max-width: 480px) {
+  @media screen and (max-width: 520px) {
     display: none;
   }
 `;
