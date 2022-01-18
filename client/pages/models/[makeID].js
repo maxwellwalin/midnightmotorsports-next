@@ -62,7 +62,10 @@ export default function ModelSelectionPage({ query }) {
 }
 
 const Container = styled.div`
-    padding: 3rem 7rem 5rem 7rem;
+    min-height: 628px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 `
 
 export const PageTitle = styled.div`

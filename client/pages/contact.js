@@ -81,9 +81,10 @@ export default function Contact() {
 }
 
 const Container = styled.div`
-    margin: 3% 0;
+    min-height: 628px;
     display: flex;
     justify-content: center;
+    align-items: center;
     color: white;
 `
 
