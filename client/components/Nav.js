@@ -75,7 +75,7 @@ const Nav = styled.nav`
 const StyledLink = styled.div`
   text-decoration: none;
   color: white;
-  transition: 400ms;
+  transition: 200ms;
   padding: 0.5rem 1rem;
   border: 1px solid #6FFFE9;
   &:hover {
@@ -84,6 +84,7 @@ const StyledLink = styled.div`
     color: #6FFFE9;
     background-color: #0B132B;
     border: 1px solid #6FFFE9;
+    border-radius: 10rem;
   }
   &.active {
     color: #6FFFE9;
@@ -98,7 +99,6 @@ export const DisappearingDiv = styled.div`
   }
 `;
 const CartIcon = styled.button`
-  display: none;
   position: fixed;
   top: 1rem;
   right: 1rem;
