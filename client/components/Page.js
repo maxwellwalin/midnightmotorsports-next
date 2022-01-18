@@ -13,7 +13,7 @@ export default function Page({ children }) {
         <meta name="description" content="Midnight Motorsports is the best place to shop for performance car parts and accessories online. Based in Lake Forest, California, we are an auto-body shop that specializes in performance and maintenance." />
         <meta property="og:description" content="Midnight Motorsports is the best place to shop for performance car parts and accessories online. Based in Lake Forest, California, we are an auto-body shop that specializes in performance and maintenance." />
         <meta property="og:type" content="website" />
-        <link rel="icon" href="/images/midnightlogo.png" />
+        <link rel="icon" href="/images/midnightlogo-transparent.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500&display=swap" rel="stylesheet" />
