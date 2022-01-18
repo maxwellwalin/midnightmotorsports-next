@@ -1,4 +1,3 @@
-import { faProductHunt } from "@fortawesome/free-brands-svg-icons";
 import styled from "styled-components";
 import CartStyles from "./styles/CartStyles";
 import Supreme from "./styles/Supreme";

@@ -1,13 +1,9 @@
 import styled from "styled-components";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { useCart } from "../lib/CartState";
-import CartCount from "./CartCount";
-import { useUser } from "./User";
+
 function NavBar() {
-  const user = useUser();
   const router = useRouter();
-  const { openCart } = useCart();
   return (
     <Nav>
       <StyledLink>
@@ -43,41 +39,24 @@ function NavBar() {
           </div>
         </Link>
       </StyledLink>
-      <CartIcon type="button" onClick={openCart}>
-        My Cart
-        <CartCount
-          count={user?.cart.reduce(
-            (tally, cartItem) => tally + (cartItem.part ? cartItem.quantity : 0),
-            0
-          )}
-        />
-      </CartIcon>
     </Nav>
   );
 }
 const Nav = styled.nav`
-  background-color: #1C2541;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  padding: 1rem 30%;
-  border-bottom: 1px solid #3A506B;
   justify-items: center;
-
-  @media screen and (max-width: 1200px) {
-    padding: 1rem 15%;
-  }
-
-  @media screen and (max-width: 700px) {
-    padding: 1rem 5%;
-  }
-
+  align-items: center;
 `
-const StyledLink = styled.div`
+export const StyledLink = styled.div`
   text-decoration: none;
   color: white;
   transition: 200ms;
   padding: 0.5rem 1rem;
-  border: 1px solid #6FFFE9;
+  border: 1px solid transparent;
+  border-radius: 10rem;
+  text-align: center;
+
   &:hover {
     transition: 400ms;
     cursor: pointer;
@@ -86,10 +65,12 @@ const StyledLink = styled.div`
     border: 1px solid #6FFFE9;
     border-radius: 10rem;
   }
+
   &.active {
     color: #6FFFE9;
   }
 `;
+
 export const DisappearingDiv = styled.div`
   display: inline;
   align-self: center;
@@ -98,11 +79,7 @@ export const DisappearingDiv = styled.div`
     display: none;
   }
 `;
-const CartIcon = styled.button`
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-`
+
 export default NavBar;
 
 

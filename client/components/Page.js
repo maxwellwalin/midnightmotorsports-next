@@ -20,7 +20,6 @@ export default function Page({ children }) {
       </Head>
       <GlobalStyles />
       <Header />
-      <Nav />
       <main>{children}</main>
       <Footer />
     </>
@@ -66,7 +65,7 @@ const GlobalStyles = createGlobalStyle`
   button {
     display: flex;
     align-content: center;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Sora', sans-serif;
     text-align: center;
   }
 
