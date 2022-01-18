@@ -3,6 +3,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Page from "../components/Page";
 import {CartStateProvider} from "../lib/CartState";
 import withData from "../lib/withData";
+import nProgress from "nprogress";
+import 'nprogress/nprogress.css';
+import Router from "next/router";
+
+Router.events.on('routeChangeStart', () => nProgress.start());
+Router.events.on('routeChangeComplete', () => nProgress.done());
+Router.events.on('routeChangeError', () => nProgress.done());
 
 function MyApp({ Component, pageProps, apollo }) {
   return (
