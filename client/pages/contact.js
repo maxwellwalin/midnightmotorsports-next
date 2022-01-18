@@ -81,12 +81,11 @@ export default function Contact() {
 }
 
 const Container = styled.div`
-    margin: 3rem 0;
+    margin: 3% 0;
     display: flex;
     justify-content: center;
     color: white;
 `
-
 
 const Form = styled.form`
     display: flex;
@@ -94,7 +93,6 @@ const Form = styled.form`
     justify-content: center;
     text-align: center;
     font-size: 20px;
-    max-width: 450px;
 
     @media (max-width: 450px) {
         width: 320px;
@@ -110,11 +108,11 @@ const Input = styled.input`
     border: 2px solid white;
 
     &:hover {
-        box-shadow: 0px 0px 3px 3px white;
+        box-shadow: 0px 0px 1px 1px white; 
     }
 
     &:focus {
-        box-shadow: 0px 0px 7px 7px white, 0px 0px 7px 7px white;
+        box-shadow: 0px 0px 2px 2px white; 
     }
 `
 
@@ -124,6 +122,14 @@ const Select = styled.select`
     padding: 10px;
     border: 2px solid white;
     border-radius: 8px;
+
+    &:hover {
+        box-shadow: 0px 0px 1px 1px white;  
+    }
+
+    &:focus {
+        box-shadow: 0px 0px 2px 2px white; 
+    }
 `
 
 const Option = styled.option`
@@ -140,21 +146,31 @@ const Textarea = styled.textarea`
     padding: 10px;
     border: 2px solid white;
     border-radius: 8px;
-`
-
-const SubmitBtn = styled.button`
-    color: white;
-    margin-top: 20px;
-    padding: 10px;
-    border-radius: 8px;
-    background: linear-gradient(rgb(237, 13, 237), rgb(3, 3, 66));
 
     &:hover {
-        transition: 400ms;
-        box-shadow: 0px 0px 3px 3px white; 
+        box-shadow: 0px 0px 1px 1px white;  
     }
 
     &:focus {
-        box-shadow: 0px 0px 7px 7px white;
+        box-shadow: 0px 0px 2px 2px white; 
+    }
+`
+
+const SubmitBtn = styled.button`
+    display: flex;
+    justify-items: center;
+    color: #0B132B;
+    margin-top: 20px;
+    padding: 1rem;
+    border-radius: 8px;
+    background: #6FFFE9;
+    transition: 400ms;
+    font-weight: bolder;
+    display: inline-block;
+
+    &:hover {
+        transition: 400ms;
+        background-color: #6fffe990;
+        box-shadow: 0px 0px 1px 1px white; 
     }
 `
