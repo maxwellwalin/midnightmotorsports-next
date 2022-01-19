@@ -52,7 +52,7 @@ export default function ModelSelectionPage({ query }) {
                             <Link href={`/categories/${model.id}`} shallow>
                                 <ModelSelectIcon src={model?.images?.filter(image => image.name === `${model.name}icon`)[0]?.image?.publicUrlTransformed} />
                             </Link>
-                            <PageTitle>{model.name.toUpperCase()}</PageTitle>
+                            <ModelName>{model.name.toUpperCase()}</ModelName>
                         </div>
                     )
                 })}
@@ -62,10 +62,7 @@ export default function ModelSelectionPage({ query }) {
 }
 
 const Container = styled.div`
-    min-height: 628px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    padding: 2rem 20% 4rem 20%;
 `
 
 export const PageTitle = styled.div`
@@ -76,9 +73,16 @@ export const PageTitle = styled.div`
 
 const IconContainer = styled.div`
     display: flex;
-    width: 100%;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
+    background-color: #1c2541ff;
+    padding: 2rem 0;
+    border-radius: 12px;
+`
+
+const ModelName = styled.h2`
+    text-align: center;
+    margin: 0;
 `
 
 const ModelSelectIcon = styled.img`

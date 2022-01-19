@@ -52,7 +52,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   main {
-    min-height: 628px;
+    min-height: 74.7vh;
   }
 
   a {

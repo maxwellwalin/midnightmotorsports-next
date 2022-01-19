@@ -38,8 +38,10 @@ h1 {
   display: flex;
   font-size: 14px;
   align-items: center;
-  border-left: 1px solid #6FFFE9;
-  background:#0b132b;
+  border-left: 2px solid #6FFFE9;
+  background-color: #1c2541ff;
+  padding: 2rem;
+  border-radius: 0 12px 12px 0;
   margin: 3% 15%;
 }
 

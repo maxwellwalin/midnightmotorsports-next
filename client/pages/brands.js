@@ -55,7 +55,7 @@ const Container = styled.div`
 export const PageTitle = styled.div`
     text-align: center;
     font-size: 3rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 `
 
 const IconContainer = styled.div`
@@ -64,6 +64,9 @@ const IconContainer = styled.div`
     justify-items: center;
     align-items: center;
     row-gap: 5rem;
+    background-color: #1c2541ff;
+    padding: 2rem 0;
+    border-radius: 12px;
 `
 
 const BrandSelectIcon = styled.img`

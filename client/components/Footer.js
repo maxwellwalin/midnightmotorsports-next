@@ -31,6 +31,7 @@ const FooterStyles = styled.footer`
   padding: 2rem;
   border-top: 1px solid #3A506B;
   justify-items: center;
+  min-height: 4.2vh;
   @media (max-width: 480px) {
     grid-template-columns: 1fr 1fr;
   }
