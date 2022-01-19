@@ -81,7 +81,7 @@ export default function Contact() {
 }
 
 const Container = styled.div`
-    height: 74.7vh;
+    min-height: 74.7vh;
     display: flex;
     justify-content: center;
     align-items: center;

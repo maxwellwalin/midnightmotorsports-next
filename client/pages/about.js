@@ -45,7 +45,7 @@ h1 {
 }
 
 .aboutInfo {
-  height: 100%;
+  min-height: 100%;
 }
 
 .testBox {
@@ -69,7 +69,7 @@ h1 {
 
 .box2 {
   border: 1px solid #6FFFE9;
-  max-height:50%;
+  min-height:50%;
   margin: 0 15%;
 }
 

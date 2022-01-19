@@ -70,7 +70,7 @@ const IconContainer = styled.div`
 
 const BrandSelectIcon = styled.img`
     width: inherit;
-    height: 12rem;
+    max-height: 12rem;
 
     &:hover {
         cursor: pointer;
