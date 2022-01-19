@@ -2,9 +2,9 @@ import { useQuery } from "@apollo/client"
 import gql from "graphql-tag"
 import styled from 'styled-components'
 import Link from "next/link"
-import { PageTitle } from "../models/[makeID]"
 import capitalize from "../../lib/capitalize"
 import Head from 'next/head'
+import { PageTitle } from "../brands"
 
 const ALL_CATEGORIES_QUERY = gql`
     query allCategories {

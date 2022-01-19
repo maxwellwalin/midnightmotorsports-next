@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import Head from 'next/head'
 import capitalize from "../../lib/capitalize";
+import { PageTitle } from "../brands";
 
 const SINGLE_MAKE_QUERY = gql`
 query Make($id: ID!) {
@@ -62,25 +63,25 @@ export default function ModelSelectionPage({ query }) {
 }
 
 const Container = styled.div`
-    padding: 2rem 20% 4rem 20%;
-`
-
-export const PageTitle = styled.div`
-    text-align: center;
-    font-size: 3rem;
-    margin-bottom: 3rem;
+    min-height: 74.7vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 `
 
 const IconContainer = styled.div`
-    display: flex;
-    justify-content: space-around;
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+    justify-items: center;
     align-items: center;
-    background-color: #1c2541ff;
-    padding: 2rem 0;
+    row-gap: 5rem;
+    padding: 2rem 20%;
     border-radius: 12px;
 `
 
-const ModelName = styled.h2`
+const ModelName = styled.h3`
     text-align: center;
     margin: 0;
 `

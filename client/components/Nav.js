@@ -4,11 +4,11 @@ import Link from "next/link";
 
 function NavBar() {
   const router = useRouter();
+  
   return (
     <Nav>
-      <StyledLink>
+      <StyledLink className={router.pathname == "/about" ? "active" : "about"}>
         <Link
-          className={router.pathname == "/about" ? "active" : "about"}
           href="/about"
           shallow
         >
@@ -17,9 +17,8 @@ function NavBar() {
           </div>
         </Link>
       </StyledLink>
-      <StyledLink>
+      <StyledLink className={router.pathname == "/brands" ? "active" : "about"}>
         <Link
-          className={router.pathname == "/brands" ? "active" : "about"}
           href="/brands"
           shallow
         >
@@ -28,9 +27,8 @@ function NavBar() {
           </div>
         </Link>
       </StyledLink>
-      <StyledLink>
+      <StyledLink className={router.pathname == "/contact" ? "active" : "about"}>
         <Link
-          className={router.pathname == "/contact" ? "active" : "about"}
           href="/contact"
           shallow
         >
@@ -68,6 +66,7 @@ export const StyledLink = styled.div`
 
   &.active {
     color: #6FFFE9;
+    text-decoration: underline;
   }
 `;
 
