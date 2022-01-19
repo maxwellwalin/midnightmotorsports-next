@@ -52,18 +52,20 @@ const Container = styled.div`
     padding: 2rem 20% 4rem 20%;
 `
 
-export const PageTitle = styled.div`
+export const PageTitle = styled.h2`
     text-align: center;
     font-size: 3rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 `
 
 const IconContainer = styled.div`
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     justify-items: center;
     align-items: center;
     row-gap: 5rem;
+    padding: 2rem 0;
+    border-radius: 12px;
 `
 
 const BrandSelectIcon = styled.img`

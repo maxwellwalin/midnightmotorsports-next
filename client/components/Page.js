@@ -20,7 +20,6 @@ export default function Page({ children }) {
       </Head>
       <GlobalStyles />
       <Header />
-      <Nav />
       <main>{children}</main>
       <Footer />
     </>
@@ -39,13 +38,21 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
   }
 
+  :root {
+    --oxford-blue: #0b132bff;
+    --space-cadet: #1c2541ff;
+    --independence: #3a506bff;
+    --maximum-blue-green: #5bc0beff;
+    --turquoise-blue: #6fffe9ff;
+  }
+
   body {
     background: #0B132B;
     color: white;
   }
 
   main {
-    min-height: 628px;
+    min-height: 74.7vh;
   }
 
   a {
@@ -58,7 +65,7 @@ const GlobalStyles = createGlobalStyle`
   button {
     display: flex;
     align-content: center;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Sora', sans-serif;
     text-align: center;
   }
 
