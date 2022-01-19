@@ -4,7 +4,7 @@ export default function About() {
   return (
     <Container >
       <div className="box1">
-        <div className='aboutAndTest'>
+        <div className='aboutInfo'>
           <p className="aboutPar"><h1>About Us</h1>Midnight Motorsports is a state-of-the-art car servicing and car parts hub. It was founded here in Lake Forest, California in 2018. Since then, we have serviced and assisted over 1,000 customers with their car needs. Here are some of our testimonials:</p>
           <div className='testBox'>
             <div className='testimonials'>Chris is an outstanding customer-service oriented owner!<div>- John</div></div>
@@ -37,10 +37,15 @@ h1 {
 .box1 {
   display: flex;
   font-size: 14px;
-  align-items: center;
-  border-left: 1px solid #6FFFE9;
-  background:#0b132b;
+  border-left: 2px solid #6FFFE9;
+  background-color: #1c2541ff;
+  padding: 2rem;
+  border-radius: 0 12px 12px 0;
   margin: 3% 15%;
+}
+
+.aboutInfo {
+  height: 100%;
 }
 
 .testBox {

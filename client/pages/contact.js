@@ -81,11 +81,10 @@ export default function Contact() {
 }
 
 const Container = styled.div`
-    min-height: 628px;
+    height: 74.7vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
 `
 
 const Form = styled.form`

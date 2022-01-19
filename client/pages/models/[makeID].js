@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import Head from 'next/head'
 import capitalize from "../../lib/capitalize";
+import { PageTitle } from "../brands";
 
 const SINGLE_MAKE_QUERY = gql`
 query Make($id: ID!) {
@@ -52,7 +53,7 @@ export default function ModelSelectionPage({ query }) {
                             <Link href={`/categories/${model.id}`} shallow>
                                 <ModelSelectIcon src={model?.images?.filter(image => image.name === `${model.name}icon`)[0]?.image?.publicUrlTransformed} />
                             </Link>
-                            <PageTitle>{model.name.toUpperCase()}</PageTitle>
+                            <ModelName>{model.name.toUpperCase()}</ModelName>
                         </div>
                     )
                 })}
@@ -62,23 +63,27 @@ export default function ModelSelectionPage({ query }) {
 }
 
 const Container = styled.div`
-    min-height: 628px;
+    min-height: 74.7vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-`
-
-export const PageTitle = styled.div`
-    text-align: center;
-    font-size: 3rem;
-    margin-bottom: 3rem;
+    justify-content: center;
+    align-items: center;
 `
 
 const IconContainer = styled.div`
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+    justify-items: center;
     align-items: center;
+    row-gap: 5rem;
+    padding: 2rem 20%;
+    border-radius: 12px;
+`
+
+const ModelName = styled.h3`
+    text-align: center;
+    margin: 0;
 `
 
 const ModelSelectIcon = styled.img`
