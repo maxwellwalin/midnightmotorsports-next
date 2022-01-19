@@ -83,7 +83,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `maxwellwalin`, `midnightmotorsports-next`, `twitter_handle`, `linkedin_username`, `maxwellwalin`, `gmail`, `project_title`, `project_description`
+We partnered with Chris of Midnight Motorsports in Lake Forest, CA to create an eCommerce app on which he would be able to sell cart parts that he is licensed to sell as a dealer. Since we use Keystone.js, Chris is consistently able to add, edit, and remove content like car parts, models, makes, etc. using the Keystone admin UI. 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -198,4 +198,4 @@ Project Link: [https://github.com/maxwellwalin/midnightmotorsports-next](https:/
 [issues-url]: https://github.com/maxwellwalin/midnightmotorsports-next/issues
 [license-shield]: https://img.shields.io/github/license/maxwellwalin/midnightmotorsports-next.svg?style=for-the-badge
 [license-url]: https://github.com/maxwellwalin/midnightmotorsports-next/blob/master/LICENSE.txt
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: ./client/public/images/about-ss.png
