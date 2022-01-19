@@ -30,7 +30,7 @@ const OrderStyles = styled.div`
     padding-bottom: 2rem;
     img {
       width: 100%;
-      height: 100%;
+      min-height: 100%;
       object-fit: cover;
     }
   }

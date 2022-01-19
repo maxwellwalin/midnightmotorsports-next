@@ -61,7 +61,7 @@ const HeaderStyles = styled.header`
 
 export const SocialIcon = styled(FontAwesomeIcon)`
   width: 2rem;
-  height: 2rem;
+  min-height: 2rem;
 `
 
 const MidnightTitle = styled.h1`

@@ -52,7 +52,7 @@ const Form = styled.form`
       opacity: 0.5;
     }
     &::before {
-      height: 10px;
+      min-height: 10px;
       content: '';
       display: block;
       background-color: white;
