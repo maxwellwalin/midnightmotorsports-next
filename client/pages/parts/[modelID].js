@@ -39,8 +39,6 @@ query Model($id: ID!) {
 }
 `
 
-
-
 export default function ProductsPage({ query }) {
     const { data, loading, error } = useQuery(SINGLE_MODEL_QUERY, {
         variables: { id: query.modelID }
@@ -64,7 +62,7 @@ export default function ProductsPage({ query }) {
     }
 
     return (
-        <div>
+        <>
             <Head>
                 <title>
                     {`Midnight Motorsports | ${modelName} Parts`}
@@ -92,26 +90,30 @@ export default function ProductsPage({ query }) {
                         })}
                 </PartsContainer>
             </Container>
-        </div>
+        </>
     )
 }
 
 const Container = styled.div`
-    
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    gap: 2rem;
+    justify-items: center;
+    align-items: center;
 `
 
 const ModelHero = styled.div`
   background-position: center;
   background-size: 100%;
   background-repeat: no-repeat;
-  display: flex;
+  display: flex; 
+  width: 100%;
   justify-content: center;
   align-items: center;
-  width: 100%;
   min-height: 30rem;
-  border: 2px solid white;
-  border-radius: 8px;
-  margin-bottom: 2rem;
+  border-top: 2px solid #6FFFE9;
+  border-bottom: 2px solid #6FFFE9;
 `
 
 const ModelName = styled.div`
@@ -121,10 +123,13 @@ const ModelName = styled.div`
 
 const PartsContainer = styled.div`
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     justify-items: center;
     align-items: center;
-    border: 2px solid white;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 60%;
+    border: 2px solid #6FFFE9;
     border-radius: 7px;
-    margin: 0 2rem 2rem 2rem;
+    margin-bottom: 2rem;
 `

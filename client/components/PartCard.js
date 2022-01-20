@@ -49,9 +49,8 @@ function PartCard(item) {
 export default PartCard;
 
 const PartCardStyle = styled.div`
-    width: 20rem;
-    margin: 0.5rem;
     color: black;
+    max-width: 23rem;
 `
 
 const LinkStyles = styled.div`
