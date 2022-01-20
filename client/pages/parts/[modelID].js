@@ -112,7 +112,7 @@ const ModelHero = styled.div`
   justify-content: center;
   align-items: center;
   min-height: 30rem;
-  border-top: 2px solid #6FFFE9;
+  border-top: 1px solid #6FFFE9;
   border-bottom: 2px solid #6FFFE9;
 `
 
