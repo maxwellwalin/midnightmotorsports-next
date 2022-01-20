@@ -5,7 +5,11 @@ import SignUp from "../components/SignUp";
 const GridStyles = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 2rem;
+  gap: 2rem;
+  padding: 2rem 25%;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
 `;
 
 export default function Login() {
