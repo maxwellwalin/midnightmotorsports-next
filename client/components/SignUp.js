@@ -3,6 +3,7 @@ import { useMutation } from '@apollo/client';
 import Form from './styles/Form';
 import useForm from '../lib/useForm';
 import Error from './ErrorMessage';
+import { LoginButton } from './SignIn';
 
 const SIGNUP_MUTATION = gql`
   mutation SIGNUP_MUTATION(
@@ -34,7 +35,7 @@ export default function SignUp() {
   }
   return (
     <Form method="POST" onSubmit={handleSubmit}>
-      <h2>Sign Up For an Account</h2>
+      <h2>Sign Up</h2>
       <Error error={error} />
       <fieldset>
         {data?.createUser && (
@@ -47,7 +48,7 @@ export default function SignUp() {
           <input
             type="text"
             name="name"
-            placeholder="Your Name"
+            placeholder="Name"
             autoComplete="name"
             value={inputs.name}
             onChange={handleChange}
@@ -58,7 +59,7 @@ export default function SignUp() {
           <input
             type="email"
             name="email"
-            placeholder="Your Email Address"
+            placeholder="Email Address"
             autoComplete="email"
             value={inputs.email}
             onChange={handleChange}
@@ -75,7 +76,7 @@ export default function SignUp() {
             onChange={handleChange}
           />
         </label>
-        <button type="submit">Sign In!</button>
+        <LoginButton type="submit">Sign Up!</LoginButton>
       </fieldset>
     </Form>
   );
