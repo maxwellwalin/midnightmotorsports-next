@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const OrderStyles = styled.div`
-  max-width: 1000px;
+  max-width: 960px;
   margin: 0 auto;
   border: 1px solid var(--offWhite);
   box-shadow: var(--bs);
@@ -33,6 +33,12 @@ const OrderStyles = styled.div`
       min-height: 100%;
       object-fit: cover;
     }
+  }
+  [name="description"] {
+    margin-top: 32px;
+  }
+  [name="quantity"] {
+    font-size: 1.2rem;
   }
 `;
 export default OrderStyles;
