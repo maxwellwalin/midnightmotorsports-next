@@ -53,6 +53,7 @@ const GlobalStyles = createGlobalStyle`
 
   main {
     min-height: 74.7vh;
+    padding-top: 129px;
   }
 
   a {

@@ -1,7 +1,7 @@
 import { ApolloProvider } from "@apollo/client";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Page from "../components/Page";
-import {CartStateProvider} from "../lib/CartState";
+import { CartStateProvider } from "../lib/CartState";
 import withData from "../lib/withData";
 import nProgress from "nprogress";
 import 'nprogress/nprogress.css';

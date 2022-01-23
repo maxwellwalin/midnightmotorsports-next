@@ -47,12 +47,16 @@ export default function Header() {
 }
 
 const HeaderStyles = styled.header`
+  position: fixed;
+  width: 100%;
+  background-color: #0B132B;
   display: grid;
-  border-bottom: 1px solid #3A506B;
+  border-bottom: 1px solid #6FFFE9;
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
   padding: 1rem;
-  min-height: 10.6vh;
+  min-height: 10.2vh;
+  z-index: 100;
 
   @media screen and (max-width: 650px) {
     grid-template-columns: 1fr 1fr;
@@ -61,7 +65,7 @@ const HeaderStyles = styled.header`
 
 export const SocialIcon = styled(FontAwesomeIcon)`
   width: 2rem;
-  height: 2rem;
+  min-height: 2rem;
 `
 
 const MidnightTitle = styled.h1`

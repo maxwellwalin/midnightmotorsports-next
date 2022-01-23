@@ -18,14 +18,19 @@ const Form = styled.form`
   font-size: 1.5rem;
   line-height: 1.5;
   font-weight: 600;
+  h2 {
+    text-align: center;
+    font-weight: bold;
+  }
   label {
     display: block;
     margin-bottom: 1rem;
+    margin-top: 1rem;
   }
   input,
   textarea,
   select {
-    width: 100%;
+    width: 94.4%;
     padding: 0.5rem;
     font-size: 1rem;
     border: 1px solid #0b132b;
@@ -36,13 +41,13 @@ const Form = styled.form`
   }
   button,
   input[type='submit'] {
-    width: auto;
+    width: 100%;
     background: #0b132b;
     color: white;
     border: 0;
-    font-size: 2rem;
+    font-size: 1.5;
     font-weight: 600;
-    padding: 0.5rem 1.2rem;
+    display: inline-block;
   }
   fieldset {
     border: 0;
@@ -52,7 +57,7 @@ const Form = styled.form`
       opacity: 0.5;
     }
     &::before {
-      height: 10px;
+      min-height: 10px;
       content: '';
       display: block;
       background-color: white;

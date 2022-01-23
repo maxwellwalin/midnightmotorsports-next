@@ -1,35 +1,34 @@
 import styled from 'styled-components';
 
 const CartStyles = styled.div`
-  padding: 20px;
-  position: relative;
-  background: white;
+  padding: 2rem;
+  width: 33%;
+  height: 70%;
+  background: #1c2541ff;
   position: fixed;
-  height: 100%;
-  top: 0;
+  top: 129px;
   right: 0;
-  width: 40%;
   min-width: 500px;
-  bottom: 0;
   transform: translateX(100%);
   transition: all 0.3s;
-  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
   z-index: 5;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-bottom: 3px solid #6FFFE9;
+  border-left: 2px solid #6FFFE9;
   ${(props) => props.open && `transform: translateX(0);`};
+
   header {
-    border-bottom: 5px solid var(--#0b132b);
-    margin-bottom: 2rem;
-    padding-bottom: 2rem;
   }
+
   footer {
-    border-top: 10px double var(--#0b132b);
-    margin-top: 2rem;
-    padding-top: 2rem;
-    /* display: grid;
-    grid-template-columns: auto auto; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: calc(100% - 4rem);
     align-items: center;
-    font-size: 3rem;
-    font-weight: 900;
+    justify-items: center;
+    font-size: 1.5rem;
+    margin: 0;
     p {
       margin: 0;
     }
@@ -38,7 +37,6 @@ const CartStyles = styled.div`
     margin: 0;
     padding: 0;
     list-style: none;
-    overflow: scroll;
   }
 `;
 

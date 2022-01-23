@@ -88,7 +88,7 @@ const ModelName = styled.h3`
 
 const ModelSelectIcon = styled.img`
     width: inherit;
-    height: 12rem;
+    max-height: 12rem;
 
     &:hover {
         cursor: pointer;
