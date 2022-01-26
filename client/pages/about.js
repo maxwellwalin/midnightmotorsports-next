@@ -1,10 +1,17 @@
+import Aos from 'aos'
+import { useEffect } from 'react'
 import styled from 'styled-components'
+import "aos/dist/aos.css"
+const About = () => {
 
-export default function About() {
+useEffect(() => {
+  Aos.init({ duration:1000 })
+})
+
   return (
     <Container >
-      <div className="box1">
-        <div className='aboutInfo'>
+      <div className="box1" data-aos="fade-up">
+        <div className='aboutInfo' >
           <p className="aboutPar"><h1>About Us</h1>Midnight Motorsports is a state-of-the-art car servicing and car parts hub. It was founded here in Lake Forest, California in 2018. Since then, we have serviced and assisted over 1,000 customers with their car needs. Here are some of our testimonials:</p>
           <div className='testBox'>
             <div className='testimonials'>Chris is an outstanding customer-service oriented owner!<div>- John</div></div>
@@ -12,18 +19,20 @@ export default function About() {
             <div className='testimonials'>We were very satisfied with the products we purchased for our new M4!<div>- Steve</div></div>
           </div>
         </div>
-        <img src='/images/midnightlogo-transparent.png' alt="midnight motorsports transparent background and white logo" className="brandImg" />
+        <img src='/images/midnightlogo-transparent.png' alt="midnight motorsports transparent background and white logo" className="brandImg" data-aos="fade-up" />
       </div>
-      <div className="box2">
-        <img className='lamboimg' src='https://giffiles.alphacoders.com/129/12938.gif' alt='rear end of a lambo' />
-        <img className='skylineimg' src='https://giffiles.alphacoders.com/130/13051.gif' alt='a nissan r34 drifting' />
+      <div className="box2" data-aos="fade-up">
+        <img className='lamboimg' src='https://giffiles.alphacoders.com/129/12938.gif' alt='rear end of a lambo' data-aos="fade-up" />
+        <img className='skylineimg' src='https://giffiles.alphacoders.com/130/13051.gif' alt='a nissan r34 drifting' data-aos="fade-up" />
       </div>
-      <div className="box3">
-        <img className='supraimg' src='https://images.hdqwalls.com/download/toyota-supra-2020-tuned-4k-us-2560x1080.jpg' alt='a toyota supra' />
+      <div className="box3" data-aos="fade-up">
+        <img className='supraimg' src='https://images.hdqwalls.com/download/toyota-supra-2020-tuned-4k-us-2560x1080.jpg' alt='a toyota supra' data-aos="fade-up" />
       </div>
     </Container>
   )
 }
+
+export default About
 
 const Container = styled.div`
 display: flex;
@@ -41,7 +50,7 @@ h1 {
   background-color: #1c2541ff;
   padding: 2rem;
   border-radius: 0 12px 12px 0;
-  margin: 3% 15%;
+  margin: 7% 15%;
 }
 
 .aboutInfo {
