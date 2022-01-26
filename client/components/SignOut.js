@@ -1,5 +1,6 @@
 import { useMutation } from '@apollo/client';
 import gql from 'graphql-tag';
+import Link from 'next/link';
 import { CURRENT_USER_QUERY } from './User';
 
 const SIGN_OUT_MUTATION = gql`
@@ -14,7 +15,9 @@ export default function SignOut({ A }) {
   });
   return (
     <A type="button" onClick={signout}>
-      Logout
+      <Link href='/login'>
+        Logout
+      </Link>
     </A>
   );
 }

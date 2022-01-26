@@ -29,9 +29,9 @@ const FooterStyles = styled.footer`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   padding: 2rem;
-  border-top: 1px solid #3A506B;
   justify-items: center;
   min-height: 4.2vh;
+  border-top: 1px solid #6FFFE9;
   @media (max-width: 480px) {
     grid-template-columns: 1fr 1fr;
   }
