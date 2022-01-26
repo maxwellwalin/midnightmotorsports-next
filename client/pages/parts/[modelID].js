@@ -7,7 +7,7 @@ import capitalize from '../../lib/capitalize'
 
 const SINGLE_MODEL_QUERY = gql`
 query Model($id: ID!) {
-    Model(where: {
+    model(where: {
         id: $id
     }) {
         id
@@ -47,11 +47,11 @@ export default function ProductsPage({ query }) {
     if (loading) return <p>Loading...</p>
     if (error) return <p>Error: {error.message}</p>
 
-    let filteredParts = data.Model.parts
-    let modelName = data.Model.name.toUpperCase()
+    let filteredParts = data.model.parts
+    let modelName = data.model.name.toUpperCase()
 
     if (query.categoryName) {
-        filteredParts = data.Model.parts.map((part) => {
+        filteredParts = data.model.parts.map((part) => {
             return ({
                 ...part,
                 categories: part.categories.filter(category => category.name == query.categoryName)
@@ -70,7 +70,7 @@ export default function ProductsPage({ query }) {
             </Head>
             <Container>
                 <ModelHero style={{
-                    backgroundImage: `url(${data.Model.images.filter(image => image.name == `${data.Model.name}hero`)[0].image.publicUrlTransformed})`}}>
+                    backgroundImage: `url(${data.model.images.filter(image => image.name == `${data.model.name}hero`)[0].image.publicUrlTransformed})`}}>
                     <ModelName>{modelName} Parts</ModelName>
                 </ModelHero>
                 <PartsContainer>
@@ -79,7 +79,7 @@ export default function ProductsPage({ query }) {
                                 <PartCard
                                     key={part.id}
                                     id={part.id}
-                                    model={data.Model.name.toUpperCase()}
+                                    model={data.model.name.toUpperCase()}
                                     image={part.images[0].image.publicUrlTransformed}
                                     name={part.name}
                                     price={part.price}

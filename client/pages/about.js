@@ -2,6 +2,7 @@ import Aos from 'aos'
 import { useEffect } from 'react'
 import styled from 'styled-components'
 import "aos/dist/aos.css"
+
 const About = () => {
 
 useEffect(() => {

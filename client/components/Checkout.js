@@ -12,7 +12,7 @@ import { useState } from "react";
 import gql from "graphql-tag";
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
-import { useCart } from "../lib/CartState";
+import { useCart } from "../lib/cartState";
 import { CURRENT_USER_QUERY } from "./User";
 
 

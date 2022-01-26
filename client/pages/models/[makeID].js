@@ -8,27 +8,23 @@ import { PageTitle } from "../brands";
 
 const SINGLE_MAKE_QUERY = gql`
 query Make($id: ID!) {
-  Make(where: {
-    id: $id
-  }) {
+  make(where: { id: $id }) {
     name
     models {
       id
       name
       images {
-          name
-          image {
-              publicUrlTransformed
-          }
-          altText
-      }
-      year {
-        beginningYear
-        endYear
+        name
+        image {
+          publicUrlTransformed
+        }
+        altText
       }
     }
   }
-}`
+}
+
+`
 
 export default function ModelSelectionPage({ query }) {
     const { data, loading, error } = useQuery(SINGLE_MAKE_QUERY, {
@@ -42,12 +38,12 @@ export default function ModelSelectionPage({ query }) {
         <Container>
             <Head>
                 <title>
-                    {`Midnight Motorsports | ${capitalize(data.Make.name)} Models`}
+                    {`Midnight Motorsports | ${capitalize(data.make.name)} Models`}
                 </title>
             </Head>
-            <PageTitle>{capitalize(data.Make.name)} Models</PageTitle>
+            <PageTitle>{capitalize(data.make.name)} Models</PageTitle>
             <IconContainer>
-                {data.Make.models.map((model) => {
+                {data.make.models.map((model) => {
                     return (
                         <div key={model.id}>
                             <Link href={`/categories/${model.id}`} shallow>

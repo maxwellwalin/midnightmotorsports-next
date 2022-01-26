@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useUser } from "./User";
 import SignOut from "./SignOut";
 import NavBar from "./Nav";
-import { useCart } from "../lib/CartState";
+import { useCart } from "../lib/cartState";
 import CartCount from "./CartCount";
 import Cart from "./Cart";
 
