@@ -74,7 +74,7 @@ export const DisappearingDiv = styled.div`
   display: inline;
   align-self: center;
   justify-self: center;
-  @media screen and (max-width: 520px) {
+  @media screen and (max-width: 1400px) {
     display: none;
   }
 `;

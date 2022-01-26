@@ -49,7 +49,15 @@ export default function Brands() {
 }
 
 const Container = styled.div`
-    padding: 2rem 20% 4rem 20%;
+    padding: 2rem 20vw 4rem 20vw;
+
+    @media screen and (max-width: 1780px) {
+        padding: 2rem 12vw 4rem 12vw;
+    }
+
+    @media screen and (max-width: 1400px) {
+        padding: 2rem 8vw 4rem 8vw;
+    }
 `
 
 export const PageTitle = styled.h2`
@@ -63,9 +71,13 @@ const IconContainer = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     justify-items: center;
     align-items: center;
-    row-gap: 5rem;
+    gap: 5rem;
     padding: 2rem 0;
     border-radius: 12px;
+
+    @media screen and (max-width: 800px) {
+        padding: 2rem 8vw 4rem 8vw;
+    }
 `
 
 const BrandSelectIcon = styled.img`

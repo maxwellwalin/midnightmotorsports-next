@@ -17,7 +17,7 @@ export default function Header() {
       <HeaderStyles>
         <Link href="/about" shallow>
           <MidnightTitle>
-            MIDNIGHT <span style={{ display: 'block', marginLeft: '4rem' }}>MOTORSPORTS</span>
+            MIDNIGHT <MidnightSpan>MOTORSPORTS</MidnightSpan>
           </MidnightTitle>
         </Link>
         <NavBar />
@@ -26,9 +26,13 @@ export default function Header() {
             <SignOut A={LogButton} />
           )}
           {!user && (
-            <Link href="/login" shallow>
-              <LogButton>Login</LogButton>
-            </Link>
+            <StyledLink>
+              <Link href="/login" shallow>
+                <div>
+                  Login
+                </div>
+              </Link>
+            </StyledLink>
           )}
           <CartIcon type="button" onClick={openCart}>
             My Cart
@@ -53,14 +57,16 @@ const HeaderStyles = styled.header`
   display: grid;
   border-bottom: 1px solid #6FFFE9;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
   justify-items: center;
   padding: 1rem;
   min-height: 10.2vh;
   z-index: 100;
 
-  @media screen and (max-width: 650px) {
-    grid-template-columns: 1fr 1fr;
-  }
+  /* @media screen and (max-width: 760px) {
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+  } */
 `;
 
 export const SocialIcon = styled(FontAwesomeIcon)`
@@ -73,6 +79,7 @@ const MidnightTitle = styled.h1`
   font-weight: bolder;
   transition: 400ms;
   margin: 0;
+  align-self: center;
 
   &:hover {
     transition: 400ms;
@@ -80,31 +87,65 @@ const MidnightTitle = styled.h1`
     cursor: pointer;
   }
 
+  @media screen and (max-width: 1050px) {
+    font-size: 2rem;
+  }
+
+  @media screen and (max-width: 450px) {
+    font-size: 1.5rem;
+  }
+
   @media screen and (max-width: 450px) {
     font-size: 1.5rem;
   }
 `
-
+const MidnightSpan = styled.span`
+  display: block;
+  margin-left: 2em;
+`
 
 const CartIcon = styled.span`
 `
 
 const UserInfo = styled.div`
-  width: 100%;
-  display: grid;
+  display: flex;
   grid-template-columns: 1fr 1fr;
   align-items: center;
+  align-self: center;
   justify-items: center;
+  justify-self: center;
 `
 
-const LogButton = styled.button`
-  background-color: transparent;
+const StyledLink = styled.div`
+  text-decoration: none;
   color: white;
   transition: 200ms;
   padding: 0.5rem 1rem;
   border: 1px solid transparent;
   border-radius: 10rem;
+  margin-right: 3rem;
+  text-align: center;
+
+  &:hover {
+    transition: 400ms;
+    cursor: pointer;
+    color: #6FFFE9;
+    background-color: #0B132B;
+    border: 1px solid #6FFFE9;
+    border-radius: 10rem;
+  }
+`;
+
+const LogButton = styled.button`
+  background-color: transparent;
+  color: white;
+  transition: 200ms;
+  padding: 0.5em 1em;
+  margin-right: 3rem;
+  border: 1px solid transparent;
+  border-radius: 10rem;
   width: fit-content;
+  height: fit-content;
 
   &:hover {
     transition: 400ms;
@@ -117,6 +158,13 @@ const LogButton = styled.button`
 
   &.active {
     color: #6FFFE9;
+  }
+
+  a {
+    color: white;
+    &:hover {
+      color: white;
+    }
   }
 `;
 

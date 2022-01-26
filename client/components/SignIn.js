@@ -5,6 +5,7 @@ import useForm from "../lib/useForm";
 import { CURRENT_USER_QUERY } from "./User";
 import Error from "./ErrorMessage";
 import styled from 'styled-components';
+import { useRouter } from "next/router";
 
 const SIGNIN_MUTATION = gql`
   mutation SIGNIN_MUTATION($email: String!, $password: String!) {
@@ -25,29 +26,33 @@ const SIGNIN_MUTATION = gql`
 `;
 
 export default function SignIn() {
+  const router = useRouter();
   const { inputs, handleChange, resetForm } = useForm({
     email: "",
     password: "",
   });
   // Sign in mutation
-  const [signin, { data, loading }] = useMutation(SIGNIN_MUTATION, {
+  const [signin, { error, data, loading }] = useMutation(SIGNIN_MUTATION, {
     variables: inputs,
     refetchQueries: [{ query: CURRENT_USER_QUERY }],
   });
+
   async function handleSubmit(e) {
     e.preventDefault();
-    const res = await signin();
+    await signin();
     resetForm();
   }
-  const error =
+
+  const queryError =
     data?.authenticateUserWithPassword.__typename ===
     "UserAuthenticationWithPasswordFailure"
       ? data?.authenticateUserWithPassword
       : undefined;
+  
   return (
     <Form method="POST" onSubmit={handleSubmit}>
       <h2>Log In</h2>
-      <Error error={error} />
+      <Error error={queryError} />
       <fieldset disabled={loading} aria-busy={loading}>
         <label htmlFor="email">
           Email
