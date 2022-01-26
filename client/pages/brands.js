@@ -6,7 +6,7 @@ import Head from 'next/head'
 
 const ALL_MAKES_QUERY = gql`
 query allMakes {
-  allMakes {
+  makes {
     id
     name
     image {
@@ -34,7 +34,7 @@ export default function Brands() {
             </Head>
             <PageTitle>Our Brands</PageTitle>
             <IconContainer>
-                {data.allMakes.map((make) => {
+                {data.makes.map((make) => {
                     return (
                         <div key={make.id}>
                             <Link href={`/models/${make.id}`} shallow>

@@ -9,7 +9,7 @@ import formatMoney from "../../lib/formatMoney";
 
 const SINGLE_ITEM_QUERY = gql`
   query SINGLE_PART_QUERY($id: ID!) {
-    part: Part(where: { id: $id }) {
+    part(where: { id: $id }) {
       id
       name
       partNumber

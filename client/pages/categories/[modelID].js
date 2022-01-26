@@ -8,7 +8,7 @@ import { PageTitle } from "../brands"
 
 const ALL_CATEGORIES_QUERY = gql`
     query allCategories {
-        allCategories {
+        categories {
             id
             name
             image {
@@ -40,12 +40,12 @@ export default function Categories({ query }) {
                     <CategoryCard>
                         <Link href={`/parts/${query.modelID}`} shallow>
                             <div>
-                                <CardImage src={data.allCategories[0].image.image.publicUrlTransformed}></CardImage>
+                                <CardImage src={data.categories[0].image.image.publicUrlTransformed}></CardImage>
                                 <div>All Parts</div>
                             </div>
                         </Link>
                     </CategoryCard>
-                    {data.allCategories.map((category) => {
+                    {data.categories.map((category) => {
                         return (
                             <CategoryCard key={category.id}>
                                 <Link href={`/parts/${query.modelID}?categoryName=${category.name}`} shallow>

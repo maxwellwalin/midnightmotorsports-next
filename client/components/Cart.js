@@ -3,7 +3,7 @@ import CartStyles from "./styles/CartStyles";
 import { useUser } from "./User";
 import formatMoney from "../lib/formatMoney";
 import calcTotalPrice from "../lib/calcTotalPrice";
-import { useCart } from "../lib/CartState";
+import { useCart } from "../lib/cartState";
 import CloseButton from "./styles/CloseButton";
 import RemoveFromCart from "./RemoveFromCart";
 import { Checkout } from "./Checkout";
