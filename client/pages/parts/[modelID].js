@@ -98,7 +98,6 @@ const Container = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr auto;
-    gap: 2rem;
     justify-items: center;
     align-items: center;
 `
@@ -111,7 +110,7 @@ const ModelHero = styled.div`
   width: 100%;
   justify-content: center;
   align-items: center;
-  min-height: 30rem;
+  min-height: 15rem;
   border-top: 1px solid #6FFFE9;
   border-bottom: 2px solid #6FFFE9;
 `
@@ -125,11 +124,11 @@ const PartsContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     justify-items: center;
-    align-items: center;
+    align-items: start;
     gap: 2rem;
     padding: 2rem;
     max-width: 60%;
     border: 2px solid #6FFFE9;
-    border-radius: 7px;
-    margin-bottom: 2rem;
+    border-top: 0;
+    border-bottom: 0;
 `

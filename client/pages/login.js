@@ -1,6 +1,8 @@
+import { useRouter } from "next/router";
 import styled from "styled-components";
 import SignIn from "../components/SignIn";
 import SignUp from "../components/SignUp";
+import { useUser } from "../components/User";
 
 const GridStyles = styled.div`
   display: grid;
@@ -13,6 +15,12 @@ const GridStyles = styled.div`
 `;
 
 export default function Login() {
+  const user = useUser();
+  const router = useRouter();
+  
+  if (user) {
+    router.push("/brands")
+  }
   return (
     <GridStyles>
       <SignIn />
