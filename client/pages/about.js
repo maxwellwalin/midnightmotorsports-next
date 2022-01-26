@@ -5,7 +5,7 @@ import "aos/dist/aos.css"
 const About = () => {
 
 useEffect(() => {
-  Aos.init({ duration:2000 })
+  Aos.init({ duration:1000 })
 })
 
   return (
@@ -21,11 +21,11 @@ useEffect(() => {
         </div>
         <img src='/images/midnightlogo-transparent.png' alt="midnight motorsports transparent background and white logo" className="brandImg" data-aos="fade-up" />
       </div>
-      <div className="box2" data-aos="fade-right">
-        <img className='lamboimg' src='https://giffiles.alphacoders.com/129/12938.gif' alt='rear end of a lambo' data-aos="fade-right" />
-        <img className='skylineimg' src='https://giffiles.alphacoders.com/130/13051.gif' alt='a nissan r34 drifting' data-aos="fade-left" />
+      <div className="box2" data-aos="fade-up">
+        <img className='lamboimg' src='https://giffiles.alphacoders.com/129/12938.gif' alt='rear end of a lambo' data-aos="fade-up" />
+        <img className='skylineimg' src='https://giffiles.alphacoders.com/130/13051.gif' alt='a nissan r34 drifting' data-aos="fade-up" />
       </div>
-      <div className="box3" data-aos="fade-right">
+      <div className="box3" data-aos="fade-up">
         <img className='supraimg' src='https://images.hdqwalls.com/download/toyota-supra-2020-tuned-4k-us-2560x1080.jpg' alt='a toyota supra' data-aos="fade-up" />
       </div>
     </Container>
@@ -50,7 +50,7 @@ h1 {
   background-color: #1c2541ff;
   padding: 2rem;
   border-radius: 0 12px 12px 0;
-  margin: 3% 15%;
+  margin: 7% 15%;
 }
 
 .aboutInfo {
