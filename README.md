@@ -99,7 +99,6 @@ We partnered with Chris of Midnight Motorsports in Lake Forest, CA to create an 
 * [Styled Components](https://styled-components.com/)
 * [GraphQL](https://graphql.org/)
 * [Apollo](https://www.apollographql.com/)
-* [Nodmaxwellwaliner](https://nodmaxwellwaliner.com/about/)
 * [Bootstrap](https://getbootstrap.com)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
